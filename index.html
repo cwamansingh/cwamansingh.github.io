@@ -6,13 +6,6 @@
   <title>COMMERCE WITH AMAN SINGH | Your Success Starts Here</title>
   <link rel="icon" type="image/png" href="cas logo web.png">
 
-<script>
-    const APP_VERSION = "v3";
-    if (localStorage.getItem("cwas_app_version") !== APP_VERSION) {
-      localStorage.clear();
-      localStorage.setItem("cwas_app_version", APP_VERSION);
-    }
-  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -294,7 +287,7 @@
 
       <button onclick="setPdfCategory('CA Final')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">CA Final</button>
 
-      <button onclick="setPdfCategory('Practical Skills')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">Tally Prime & Excel</button>
+      <button onclick="setPdfCategory('Practical Skills')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">Practical Skills</button>
     </div>
 
     <div id="pdfGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
@@ -402,23 +395,26 @@
   <section id="doubt-section" class="py-12 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-6 sm:p-10">
       <div class="text-center mb-8">
-        <h3 class="text-2xl font-extrabold text-navy-900">Have a Doubt or Note Request?</h3>
-        <p class="text-slate-600 text-sm mt-1">Ask your Commerce, Tax, or Course query directly. We reply to students regularly.</p>
+        <h4 class="text-2xl font-extrabold text-navy-900">Have a Question or Doubt?</h4>
+        <p class="text-slate-600 text-sm mt-1">Subject, Course, Exams, or Career Guidance—Feel Free to Ask Anything Directly.</p>
       </div>
 
       <form onsubmit="submitDoubt(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input type="text" required placeholder="Your Full Name" class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
 
         <select class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white">
-          <option>Class 11 / 12 Commerce</option>
-          <option>B.Com Student</option>
-          <option>CA Intermediate Aspirant</option>
-          <option>TallyPrime / GST / Excel Learner</option>
+          <option>Class 11</option>
+          <option>Class 12</option>
+          <option>B.Com</option>
+          <option>CA Foundation</option>
+          <option>CA Intermediate</option>
+          <option>Class Final</option>
+          <option>Working Professional</option>
         </select>
 
         <input type="email" required placeholder="Your Email Address" class="sm:col-span-2 px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
 
-        <textarea rows="3" required placeholder="Write your subject doubt or request a specific PDF topic..." class="sm:col-span-2 px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+        <textarea rows="3" required placeholder="Write your question or doubt here..." class="sm:col-span-2 px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
 
         <button type="submit" class="sm:col-span-2 bg-navy-900 hover:bg-navy-800 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
           <i data-lucide="send" class="w-4 h-4 text-amber-400"></i> Send Message to Aman Sir
@@ -658,69 +654,54 @@
 
     // DEFAULT PDF DATA
     const defaultPdfs = [
-      { id: 1, title: "Basics of Accounts", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 2, title: "Journal Entries", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 3, title: "Ledger Posting & Trial Balance", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 4, title: "Cash Book", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 5, title: "Day Books", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 6, title: "Bank Reconciliation Statement", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 7, title: "Rectification of Errors ", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 8, title: "Depreciation", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 9, title: "Provision & Reserve", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 10, title: "Final Accounts", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 11, title: "Non-Profit Organisation", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 12, title: "Single Entry System", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 1, title: "Accountancy", category: "Class 11", subject: "Financial Accounting", pages: "Available", link: "https://drive.google.com/drive/folders/1Fe1uZ_s2LdPkUC15BvopMx4bYkiJhxTb?usp=sharing" },
 
-      { id: 13, title: "Profit and Loss Appropriation", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 14, title: "Admission of Partner", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 15, title: "Retirement of Partner", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 16, title: "Death of Partner", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 17, title: "Dissolution of Partnership Firm", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
-      { id: 18, title: "Accounting for Share Capital", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
-      { id: 19, title: "Accounting for Debentures", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
-      { id: 20, title: "Cash Flow Statement", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
-      { id: 21, title: "Ratio Analysis", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
+      { id: 2, title: "Accountancy", category: "Class 12", subject: "Financial Accounting", pages: "Available", link: "https://drive.google.com/drive/folders/1mKTyKuwnU600J9OcZV-r5dBl5iRIvwVn?usp=sharing" },
 
-      { id: 22, title: "Financial Accounting-I", category: "Semester-I", subject: "Accounting Principles & Practice", pages: "50 Pages", link: "#" },
-      { id: 23, title: "Cost Accounting-I", category: "Semester-II", subject: "Cost Elements & Cost Sheet", pages: "50 Pages", link: "#" },
-      { id: 24, title: "Cost Accounting-II", category: "Semester-III", subject: "Costing Methods & Techniques", pages: "50 Pages", link: "#" },
-      { id: 25, title: "Direct Tax-I", category: "Semester-III", subject: "Income Tax Law", pages: "50 Pages", link: "#" },
-      { id: 26, title: "Financial Accounting-II", category: "Semester-IV", subject: "Partnership & Special Accounts", pages: "50 Pages", link: "#" },
-      { id: 27, title: "Direct Tax–II and e-filing of Tax Return", category: "Semester-IV", subject: "Tax Assessment & ITR Filing", pages: "50 Pages", link: "#" },
-      { id: 28, title: "Business Regulatory Framework", category: "Semester-IV", subject: "Mercantile & Commercial Laws", pages: "50 Pages", link: "#" },
-      { id: 29, title: "Corporate Accounting", category: "Semester-V", subject: "Company Accounts & Valuation", pages: "50 Pages", link: "#" },
-      { id: 30, title: "Accounting Theory and Regulations", category: "Semester-V", subject: "Accounting Standards & Framework (Only For General)", pages: "50 Pages", link: "#" },
-      { id: 31, title: "Company Law", category: "Semester-V", subject: "Companies Act, 2013", pages: "50 Pages", link: "#" },
+      { id: 3, title: "Financial Accounting-I", category: "Semester-I", subject: "Accounting Principles & Practice", pages: "Available", link: "https://drive.google.com/drive/folders/1gykr8grYqG0Y2ifMduGkSf6lxQFZ_VJ2?usp=sharing" },
 
-      { id: 32, title: "Financial Management", category: "Semester-VI", subject: "Corporate Finance & Decisions", pages: "50 Pages", link: "#" },
-      { id: 33, title: "Indirect Tax", category: "Semester-VI", subject: "GST & Customs Law", pages: "50 Pages", link: "#" },
-      { id: 34, title: "Auditing&Assurance", category: "Semester-VI", subject: "Audit Principles & Standards", pages: "50 Pages", link: "#" },
-      { id: 35, title: "Accounting Theory and Regulations", category: "Semester-VII", subject: "Accounting Standards & Framework (Only For Honours)", pages: "50 Pages", link: "#" },
-      { id: 36, title: "Advanced Corporate Accounting", category: "Semester-VII", subject: "Mergers, Reconstructions, Consolidation & Reporting", pages: "50 Pages", link: "#" },
-      { id: 37, title: "Management Accounting", category: "Semester-VII", subject: "Budgeting,Decision Making & Variance", pages: "50 Pages", link: "#" },
-      { id: 38, title: "Financial Statement Analysis", category: "Semester-VII", subject: "Ratio & Cash Flow Analysis", pages: "50 Pages", link: "#" },
+      { id: 4, title: "Cost Accounting-I", category: "Semester-II", subject: "Cost Elements & Cost Sheet", pages: "Available", link: "https://drive.google.com/drive/folders/1HBOpLD8jsVLCCUSykC_cr6_Fek-n4ZtO?usp=sharing" },
 
-      { id: 39, title: "Accounting", category: "CA Foundation", subject: "Paper 1", pages: "250 Pages", link: "#" },
-      { id: 40, title: "Business Laws", category: "CA Foundation", subject: "Paper 2", pages: "250 Pages", link: "#" },
+      { id: 5, title: "Cost Accounting-II", category: "Semester-III", subject: "Costing Methods & Techniques", pages: "Available", link: "https://drive.google.com/drive/folders/1pXqc6SFXvz6zVA68GK1nf6tWKMu7OZcu?usp=sharing" },
+      { id: 6, title: "Direct Tax-I", category: "Semester-III", subject: "Income Tax Law", pages: "Available", link: "https://drive.google.com/drive/folders/1qY3IJZ9iciNrIa8qnCqU0ro0k4B9K-lF?usp=sharing" },
 
-      { id: 41, title: "Advanced Accounting", category: "CA Intermediate|Group-I", subject: "Paper 1", pages: "250 Pages", link: "#" },
-      { id: 42, title: "Corporate & Other Laws", category: "CA Intermediate|Group-I", subject: "Paper 2", pages: "220 Pages", link: "#" },
-      { id: 43, title: "Income Tax Law", category: "CA Intermediate|Group-I", subject: "Paper 3A", pages: "500 Pages", link: "#" },
-      { id: 44, title: "Goods & Services Tax", category: "CA Intermediate|Group-I", subject: "Paper 3B", pages: "400 Pages", link: "#" },
-      { id: 45, title: "Cost and Management Accounting", category: "CA Intermediate|Group-II", subject: "Paper 4", pages: "50 Pages", link: "#" },
-      { id: 46, title: "Auditing and Ethics", category: "CA Intermediate|Group-II", subject: "Paper 5", pages: "50 Pages", link: "#" },
-      { id: 47, title: "Financial Management", category: "CA Intermediate|Group-II", subject: "Paper 6A", pages: "50 Pages", link: "#" },
-      { id: 48, title: "Strategic Management", category: "CA Intermediate|Group-II", subject: "Paper 6B", pages: "50 Pages", link: "#" },
+      { id: 7, title: "Financial Accounting-II", category: "Semester-IV", subject: "Partnership & Special Accounts", pages: "Available", link: "https://drive.google.com/drive/folders/1lB6cMWhLwxKZihGZnrv7Tz3-SzZYr_ZX?usp=sharing" },
+      { id: 8, title: "Direct Tax–II and e-filing of Tax Return", category: "Semester-IV", subject: "Tax Assessment & ITR Filing", pages: "Available", link: "https://drive.google.com/drive/folders/1Ln_lRntKz89tt7SK5l6TUdZlo54njddD?usp=sharing" },
+      { id: 9, title: "Business Regulatory Framework", category: "Semester-IV", subject: "Mercantile & Commercial Laws", pages: "Available", link: "https://drive.google.com/drive/folders/1ujInGp0etKMRWW13rlG2o2MRWi8ngiEH?usp=sharing" },
 
-      { id: 49, title: "Financial Reporting", category: "CA Final|Group-I", subject: "Paper 1", pages: "400 Pages", link: "#" },
-      { id: 50, title: "Advance Financial Management", category: "CA Final|Group-I", subject: "Paper 2", pages: "400 Pages", link: "#" },
-      { id: 51, title: "Advance Auditing, Assurance and Professional Ethics", category: "CA Final|Group-I", subject: "Paper 3", pages: "400 Pages", link: "#" },
-      { id: 52, title: "Direct Tax Laws & International Taxation", category: "CA Final|Group-II", subject: "Paper 4", pages: "400 Pages", link: "#" },
-      { id: 53, title: "Indirect Tax Laws", category: "CA Final|Group-II", subject: "Paper 5", pages: "400 Pages", link: "#" },
-      { id: 54, title: "Integrated Business Solutions (IBS)", category: "CA Final|Group-II", subject: "Paper 6", pages: "400 Pages", link: "#" },
+      { id: 10, title: "Corporate Accounting", category: "Semester-V", subject: "Company Accounts & Valuation", pages: "Available", link: "https://drive.google.com/drive/folders/15OM_aOjrzNcMqokfKLawnNBDXSfxPsr2?usp=sharing" },
+      { id: 11, title: "Accounting Theory and Regulations", category: "Semester-V", subject: "Accounting Standards & Framework (Only For General)", pages: "Available", link: "https://drive.google.com/drive/folders/1_KTHuiH2XOA0bn2SUS9b42UARsHg1adb?usp=sharing" },
+      { id: 12, title: "Company Law", category: "Semester-V", subject: "Companies Act, 2013", pages: "Available", link: "https://drive.google.com/drive/folders/12H4NiufbcwLM5upfUpTDb5GEL_Yw-0Ik?usp=sharing" },
 
-      { id: 55, title: "TallyPrime", category: "Practical Skills", subject: "Tally & Excel", pages: "50 Pages", link: "#" },
-      { id: 56, title: "Advance Excel", category: "Practical Skills", subject: "Tally & Excel", pages: "50 Pages", link: "#" }
+      { id: 13, title: "Financial Management", category: "Semester-VI", subject: "Corporate Finance & Decisions", pages: "Available", link: "https://drive.google.com/drive/folders/1_LKDkNIerQJCenw2oPR0kjnfnyrtF5AC?usp=sharing" },
+      { id: 14, title: "Indirect Tax", category: "Semester-VI", subject: "GST & Customs Law", pages: "Available", link: "https://drive.google.com/drive/folders/14NnpbmsyWILlAofUFODpsyEnTqxtQoOm?usp=sharing" },
+      { id: 15, title: "Auditing&Assurance", category: "Semester-VI", subject: "Audit Principles & Standards", pages: "Available", link: "https://drive.google.com/drive/folders/1lDzSrufTPzOYiHIjS7QBV3723OO1eISA?usp=sharing" },
+
+      { id: 16, title: "Accounting Theory and Regulations", category: "Semester-VII", subject: "Accounting Standards & Framework (Only For Honours)", pages: "Available", link: "https://drive.google.com/drive/folders/1u-mfKBvqCmUiWbgATM4MKI5bOUdD5Jmq?usp=sharing" },
+      { id: 17, title: "Advanced Corporate Accounting", category: "Semester-VII", subject: "Mergers, Reconstructions, Consolidation & Reporting", pages: "Available", link: "https://drive.google.com/drive/folders/1QmmIc37ny4KD1Ejxa5Qs3dCT9iJ1FjVn?usp=sharing" },
+      { id: 18, title: "Management Accounting", category: "Semester-VII", subject: "Budgeting,Decision Making & Variance", pages: "Available", link: "https://drive.google.com/drive/folders/1OP4itX33ZRFeO7PHyhYEZYLhMChXfSmo?usp=sharing" },
+      { id: 19, title: "Financial Statement Analysis", category: "Semester-VII", subject: "Ratio & Cash Flow Analysis", pages: "Available", link: "https://drive.google.com/drive/folders/12QXTwRT_jiHMoMgZ9v9OA1zWl0Mg4FCk?usp=sharing" },
+
+      { id: 20, title: "Accounting", category: "CA Foundation", subject: "Paper 1", pages: "Available", link: "https://drive.google.com/drive/folders/1F-jMjPkp2sYteYjPN9jn2wmZtZFHa0i_?usp=sharing" },
+      { id: 21, title: "Business Laws", category: "CA Foundation", subject: "Paper 2", pages: "Available", link: "https://drive.google.com/drive/folders/1i3ctGe7ytUoQMv9wudQp-lHI9L9W9LJ0?usp=sharing" },
+
+      { id: 22, title: "Advanced Accounting", category: "CA Intermediate|Group-I", subject: "Paper 1", pages: "Available", link: "https://drive.google.com/drive/folders/1UZM-0Refds6pzUcnxeLDAT-idvwoMfKd?usp=sharing" },
+      { id: 23, title: "Corporate & Other Laws", category: "CA Intermediate|Group-I", subject: "Paper 2", pages: "Available", link: "https://drive.google.com/drive/folders/10QNWrpw2PpK2yH9C8wzcN6nyA4MGfpct?usp=sharing" },
+      { id: 24, title: "Income Tax Law", category: "CA Intermediate|Group-I", subject: "Paper 3A", pages: "Available", link: "https://drive.google.com/drive/folders/14_XpB2V_tyLcCEt8cyM3CXJ0TRYfGzqY?usp=sharing" },
+      { id: 25, title: "Goods & Services Tax", category: "CA Intermediate|Group-I", subject: "Paper 3B", pages: "Available", link: "https://drive.google.com/drive/folders/1GwM73s7tRH1gc38mXXvuZkQLOQpoBaOW?usp=sharing" },
+      { id: 26, title: "Cost and Management Accounting", category: "CA Intermediate|Group-II", subject: "Paper 4", pages: "Available", link: "https://drive.google.com/drive/folders/1Ftspc_-w2ouBaUT-XSAoctZp4B_DWTUq?usp=sharing" },
+      { id: 27, title: "Auditing and Ethics", category: "CA Intermediate|Group-II", subject: "Paper 5", pages: "Available", link: "https://drive.google.com/drive/folders/1YABMUEXZM1Nji4cPUUjS5qWI-VLdfY_c?usp=sharing" },
+      { id: 28, title: "Financial Management", category: "CA Intermediate|Group-II", subject: "Paper 6A", pages: "Available", link: "https://drive.google.com/drive/folders/1Md2vk3yrahP1uuD9DLdJnXHXiUIocqHX?usp=sharing" },
+      { id: 29, title: "Strategic Management", category: "CA Intermediate|Group-II", subject: "Paper 6B", pages: "Available", link: "https://drive.google.com/drive/folders/1zIQBIPczIcPa-UFWhtZL-XxsK7M47a2K?usp=sharing" },
+
+      { id: 30, title: "Financial Reporting", category: "CA Final|Group-I", subject: "Paper 1", pages: "Available", link: "https://drive.google.com/drive/folders/1q44_FqyVxqr87ntlLLqWkInq2hK5hchj?usp=sharing" },
+      { id: 31, title: "Advance Financial Management", category: "CA Final|Group-I", subject: "Paper 2", pages: "Available", link: "https://drive.google.com/drive/folders/1pBrMND6D75BxlhwI0ctHvAeIj1l_I1WJ?usp=sharing" },
+      { id: 32, title: "Advance Auditing, Assurance and Professional Ethics", category: "CA Final|Group-I", subject: "Paper 3", pages: "Available", link: "https://drive.google.com/drive/folders/1lFlaC3iE7ZLm6-jv1SeP6KUBhZVdePEA?usp=sharing" },
+      { id: 33, title: "Direct Tax Laws & International Taxation", category: "CA Final|Group-II", subject: "Paper 4", pages: "Available", link: "https://drive.google.com/drive/folders/1Kr3Bp0tYEbhR4KzpNje_qYNvvNFVwA04?usp=sharing" },
+      { id: 34, title: "Indirect Tax Laws", category: "CA Final|Group-II", subject: "Paper 5", pages: "Available", link: "https://drive.google.com/drive/folders/169UHSqvicYwiKt6azwQi8jEi2Iw7fDXy?usp=sharing" },
+      { id: 35, title: "Integrated Business Solutions (IBS)", category: "CA Final|Group-II", subject: "Paper 6", pages: "Available", link: "https://drive.google.com/drive/folders/1ItSv6pMYGpVOWp4384OG0fESJmkn-7RN?usp=sharing" },
+      { id: 36, title: "TallyPrime", category: "Practical Skills", subject: "TallyPrime Basic to Advance", pages: "Available", link: "https://drive.google.com/drive/folders/1TNgSiqtwpk2Z9II7C8rGaAvsGMbbRO1d?usp=sharing" },
+      { id: 37, title: "Excel", category: "Practical Skills", subject: "Basic Excel & Advance Excel", pages: "Available", link: "https://drive.google.com/drive/folders/16qE1278MkUPHHytGNc0UvzK6oRAsg45K?usp=sharing" }
     ];
 
     // DEFAULT COURSE DATA
@@ -794,68 +775,15 @@
     ];
 
     // STATE MANAGEMENT WITH LOCALSTORAGE
-    let pdfs = JSON.parse(localStorage.getItem('cwas_pdfs')) || defaultPdfs;
-    let courses = JSON.parse(localStorage.getItem('cwas_courses')) || defaultCourses;
+    let pdfs = defaultPdfs;
+    let courses = defaultCourses;
     let currentPdfCategory = 'All';
     let currentCourseTab = 'free';
     let studentUser = JSON.parse(localStorage.getItem('cwas_student')) || null;
     let downloadedPdfs = JSON.parse(localStorage.getItem('cwas_downloads')) || [];
     let selectedCheckoutCourse = null;
 
-    // MIGRATE OLD SAVED CA CATEGORIES
-    // This keeps previously uploaded PDFs and converts old category names.
-    const oldCategoryMap = {
-      "CA Inter Group-I": "CA Intermediate|Group-I",
-      "CA Inter Group-II": "CA Intermediate|Group-II",
-      "CA Intermediate Group-I": "CA Intermediate|Group-I",
-      "CA Intermediate Group-II": "CA Intermediate|Group-II",
-      "CA Final Group-I": "CA Final|Group-I",
-      "CA Final Group-II": "CA Final|Group-II"
-    };
-
-    const caGroupCategories = {
-      41: "CA Intermediate|Group-I",
-      42: "CA Intermediate|Group-I",
-      43: "CA Intermediate|Group-I",
-      44: "CA Intermediate|Group-I",
-      45: "CA Intermediate|Group-II",
-      46: "CA Intermediate|Group-II",
-      47: "CA Intermediate|Group-II",
-      48: "CA Intermediate|Group-II",
-      49: "CA Final|Group-I",
-      50: "CA Final|Group-I",
-      51: "CA Final|Group-I",
-      52: "CA Final|Group-II",
-      53: "CA Final|Group-II",
-      54: "CA Final|Group-II"
-    };
-
-    const migratedPdfs = pdfs.map(pdf => {
-      let newCategory = oldCategoryMap[pdf.category];
-
-      // Handle older generic categories if they exist in saved data.
-      if (pdf.category === "CA Inter" || pdf.category === "CA Intermediate" || pdf.category === "CA Final") {
-        newCategory = caGroupCategories[pdf.id] || pdf.category;
-      }
-
-      // Correct old default PDF categories by their IDs.
-      if (caGroupCategories[pdf.id] && (
-        pdf.category.startsWith("CA Inter") ||
-        pdf.category.startsWith("CA Intermediate") ||
-        pdf.category.startsWith("CA Final")
-      )) {
-        newCategory = caGroupCategories[pdf.id];
-      }
-
-      return newCategory ? { ...pdf, category: newCategory } : pdf;
-    });
-
-    if (migratedPdfs.some((pdf, index) => pdf.category !== pdfs[index].category)) {
-      pdfs = migratedPdfs;
-      localStorage.setItem('cwas_pdfs', JSON.stringify(pdfs));
-    }
-
-    // SAVE STATE
+       // SAVE STATE
     function saveState() {
       localStorage.setItem('cwas_pdfs', JSON.stringify(pdfs));
       localStorage.setItem('cwas_courses', JSON.stringify(courses));
