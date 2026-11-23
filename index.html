@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMMERCE WITH AMAN SINGH | Your Success Starts Here</title>
+  <link rel="icon" type="image/png" href="cas logo web.png">
+
+<script>
+    const APP_VERSION = "v3";
+    if (localStorage.getItem("cwas_app_version") !== APP_VERSION) {
+      localStorage.clear();
+      localStorage.setItem("cwas_app_version", APP_VERSION);
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: {
+            navy: { 950: '#070D19', 900: '#0F172A', 800: '#1E293B', 700: '#1E3A8A' },
+            brand: { orange: '#F97316', gold: '#F59E0B' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes floatWatermark {
+      0% { top: 15%; left: 10%; }
+      25% { top: 70%; left: 65%; }
+      50% { top: 25%; left: 75%; }
+      75% { top: 75%; left: 15%; }
+      100% { top: 15%; left: 10%; }
+    }
+
+    .watermark-move {
+      animation: floatWatermark 18s infinite linear;
+    }
+
+    .no-select {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-navy-950 via-navy-700 to-navy-950 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium border-b border-amber-500/30">
+    <span class="inline-flex items-center gap-2">
+      <span class="bg-amber-500 text-navy-950 font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wider">Free Launch Offer</span>
+      <span>Download Free Class 11-12, B.Com , CA & Practical Skills Study Notes Today!</span>
+      <a href="#pdf-library" class="underline text-amber-400 hover:text-amber-300 font-semibold ml-1">Explore PDFs →</a>
+    </span>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md text-white border-b border-slate-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="cas logo web.png" alt="Commerce With Aman Singh Logo" class="w-11 h-11 rounded-xl object-cover border border-amber-400/50 shadow-lg group-hover:scale-105 transition">
+        <div>
+          <h1 class="font-extrabold text-base sm:text-lg tracking-tight leading-none text-white">
+            COMMERCE WITH <span class="text-amber-400">AMAN SINGH</span>
+          </h1>
+          <p class="text-[10px] sm:text-[11px] tracking-[0.2em] text-orange-400 font-semibold uppercase mt-1">
+            Your Success Starts Here
+          </p>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#home" class="hover:text-amber-400 transition">Home</a>
+        <a href="#pdf-library" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          Free PDFs <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] px-1.5 py-0.5 rounded-full font-bold">LIVE</span>
+        </a>
+        <a href="#courses" class="hover:text-amber-400 transition">Video Batches</a>
+        <a href="#educator" class="hover:text-amber-400 transition">About Aman Sir</a>
+        <a href="#doubt-section" class="hover:text-amber-400 transition">Ask Doubt</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        
+<!--
+    <button onclick="toggleAdminModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 transition">
+          <i data-lucide="shield-check" class="w-4 h-4"></i> Educator Admin
+        </button>
+-->
+
+        <div id="authArea">
+          <button onclick="openAuthModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-navy-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-orange-500/25 transition">
+            <i data-lucide="user-circle" class="w-4 h-4"></i> Student Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STUDENT PORTAL DRAWER / BANNER -->
+  <section id="studentDashboard" class="hidden bg-navy-950 text-white border-b-2 border-amber-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Secure Student Portal Active
+          </span>
+          <h2 class="text-2xl font-bold mt-1">Welcome back, <span id="studentNameDisplay" class="text-amber-400">Student</span>!</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Session Protected • Dynamic Anti-Piracy Watermark Enabled (<span id="studentEmailDisplay"></span>)</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="closeDashboard()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold">Minimize Portal</button>
+          <button onclick="logoutStudent()" class="px-4 py-2 rounded-lg bg-rose-500/20 text-rose-400 border border-rose-500/30 hover:bg-rose-500 hover:text-white text-xs font-semibold transition">Logout</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div class="bg-navy-900 border border-slate-800 rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-sm text-amber-400 flex items-center gap-2"><i data-lucide="play-circle" class="w-4 h-4"></i> Enrolled Video Series</h3>
+            <span id="enrolledCount" class="text-xs bg-slate-800 px-2.5 py-0.5 rounded-full font-bold">1 Active</span>
+          </div>
+          <div id="enrolledCoursesList" class="space-y-3 text-sm"></div>
+        </div>
+
+        <div class="bg-navy-900 border border-slate-800 rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-sm text-emerald-400 flex items-center gap-2"><i data-lucide="file-check-2" class="w-4 h-4"></i> Downloaded Study Notes</h3>
+            <span id="downloadedCount" class="text-xs bg-slate-800 px-2.5 py-0.5 rounded-full font-bold">0 Files</span>
+          </div>
+          <div id="downloadedNotesList" class="space-y-2 text-xs text-slate-300 max-h-40 overflow-y-auto">
+            <p class="text-slate-500 italic">No PDFs downloaded yet in this session.</p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-navy-800 to-navy-900 border border-amber-500/30 rounded-2xl p-5 flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-sm text-white flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-amber-400"></i> Exam & Practical Readiness</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Concept clarity + practical accounting & tax application. Complete your free modules before premium batches unlock.</p>
+          </div>
+          <div class="mt-4">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-slate-400">Free Foundation Progress</span>
+              <span class="text-amber-400 font-bold" id="progressPercent">35%</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div id="progressBar" class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-[35%] transition-all duration-500"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-900 to-navy-950 text-white pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-wide">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            CLASS 11 & 12 • B.COM • CA • PRACTICAL SKILLS
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+            Master Accounting & Taxation with <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300">Conceptual Logic</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            No rote memorization—understand the <strong class="text-white">"Why" behind every topic, Accounting, Income Tax, GST, Finance, Law and Audit</strong> with Aman Singh. Access free exam-oriented PDFs & demo lectures now.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#pdf-library" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-navy-950 font-extrabold px-6 py-3.5 rounded-xl shadow-xl shadow-orange-500/25 transition transform hover:-translate-y-0.5">
+              <i data-lucide="download" class="w-5 h-5"></i> Download Free Notes
+            </a>
+            <a href="#courses" class="inline-flex items-center gap-2 bg-slate-800/90 hover:bg-slate-800 text-white border border-slate-700 font-bold px-6 py-3.5 rounded-xl transition">
+              <i data-lucide="play-circle" class="w-5 h-5 text-amber-400"></i> Explore Video Batches
+            </a>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://youtube.com/@commercewithamansingh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3.5 p-3 pr-5 rounded-2xl bg-navy-800/80 border border-slate-700/80 hover:border-red-500/50 transition group">
+              <div class="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition">
+                <i data-lucide="play" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-medium">Official YouTube Channel</p>
+                <p class="text-sm font-bold text-white group-hover:text-amber-400 transition">Commerce With Aman Singh →</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-br from-navy-800 to-navy-950 border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+            <div class="absolute -top-3 right-6 bg-emerald-500 text-navy-950 text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">
+              FREE STUDY HUB ACTIVE
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i> What's Inside This Portal?
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-900/90 border border-slate-800">
+                <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">100% Free Conceptual PDFs</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">Visual charts, AS summaries, Company Law & Taxation notes ready for instant download.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-900/90 border border-slate-800">
+                <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400"><i data-lucide="video" class="w-5 h-5"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Concept-First Video Series</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">Free foundation lectures active now; full exam & corporate batches launching soon.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-navy-900/90 border border-slate-800">
+                <div class="p-2.5 rounded-xl bg-orange-500/10 text-orange-400"><i data-lucide="calculator" class="w-5 h-5"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Practical Industry Training</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">TallyPrime, GST filing workflows, Income Tax & Advanced Excel skills.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-800 text-center">
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-amber-400">100%</p>
+                <p class="text-[11px] text-slate-400">Concept Clarity</p>
+              </div>
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-white" id="heroPdfCount">6+</p>
+                <p class="text-[11px] text-slate-400">Free PDF Guides</p>
+              </div>
+              <div>
+                <p class="text-xl sm:text-2xl font-extrabold text-orange-400">₹0</p>
+                <p class="text-[11px] text-slate-400">Entry Cost</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE PDF LIBRARY -->
+  <section id="pdf-library" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Free Resource Department (Active)
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-900 mt-2">Free PDF Notes & Study Material Hub</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-2xl">
+          Download structured, exam-ready study manuals prepared by Aman Singh.
+        </p>
+      </div>
+
+      <div class="relative w-full md:w-72">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+        <input type="text" id="pdfSearchInput" onkeyup="renderPdfs()" placeholder="Search topic,GST, Income Tax..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+      </div>
+    </div>
+
+    <!-- CATEGORY FILTER PILLS -->
+    <div class="flex flex-wrap items-center gap-2 mb-8" id="pdfFilterButtons">
+      <button onclick="setPdfCategory('All')" class="pdf-cat-btn active bg-navy-900 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition">All Levels</button>
+
+      <button onclick="setPdfCategory('Class 11')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">Class 11</button>
+
+      <button onclick="setPdfCategory('Class 12')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">Class 12</button>
+
+      <button onclick="setPdfCategory('B.Com')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">B.Com (Honours/General)</button>
+
+      <button onclick="setPdfCategory('CA Foundation')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">CA Foundation</button>
+
+      <button onclick="setPdfCategory('CA Intermediate')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">CA Intermediate</button>
+
+      <button onclick="setPdfCategory('CA Final')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">CA Final</button>
+
+      <button onclick="setPdfCategory('Practical Skills')" class="pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">Tally Prime & Excel</button>
+    </div>
+
+    <div id="pdfGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- COURSE CATALOG -->
+  <section id="courses" class="py-16 sm:py-20 bg-slate-100 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+          Structured Video Lectures
+        </span>
+
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-900 mt-2">Course Catalog & Batch Store</h2>
+
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Start with our active free foundation video lectures today. Full-syllabus paid batches are set up and will unlock soon!
+        </p>
+
+        <div class="inline-flex p-1.5 bg-white rounded-2xl border border-slate-200 shadow-sm mt-6">
+          <button id="tabFreeCourses" onclick="switchCourseTab('free')" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 text-white transition">
+            Free Video Series (Active)
+          </button>
+
+          <button id="tabPaidCourses" onclick="switchCourseTab('paid')" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-navy-900 transition flex items-center gap-1.5">
+            Premium Full Batches <span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded-full font-extrabold">STORE READY</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="coursesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT EDUCATOR SECTION -->
+  <section id="educator" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-navy-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 text-white">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="lg:col-span-5 bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 p-8 sm:p-10 flex flex-col justify-start border-b lg:border-b-0 lg:border-r border-slate-800">
+          <div>
+            <div class="flex items-center justify-center gap-4 mb-6">
+            <img src="aman cas web.jpeg" alt="Aman Singh" class="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl object-cover object-top border-2 border-amber-400 shadow-xl">
+     </div>
+           <h3 class="text-2xl sm:text-3xl font-extrabold">Aman Singh</h3>
+            <p class="text-amber-400 font-semibold text-sm mt-1">Accounting & Taxation Expert | Commerce Educator</p>
+            <p class="text-slate-400 text-xs mt-1">Learn • Understand • Grow</p>
+          </div>
+
+          <div class="mt-6 space-y-3 text-xs text-slate-300">
+            <!-- Phone Number -->
+            <a href="tel:+91 62892 27186" class="flex items-center gap-2.5 hover:text-white transition">
+                <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+                <span>+91 62892 27186</span>
+            </a>
+
+            <!-- Email ID -->
+            <a href="mailto:amansingh70231@gmail.com" class="flex items-center gap-2.5 hover:text-white transition">
+                <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+                <span>amansingh70231@gmail.com</span>
+            </a>
+
+            <!-- WhatsApp Channel Link -->
+            <a href="https://whatsapp.com/channel/0029VbC6HycF1YlZW54tlw2Q" target="_blank" rel="noopener noreferrer" class="flex w-fit items-center gap-2 mt-2 px-4 py-2 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 font-semibold hover:bg-emerald-500/25 hover:text-emerald-300 transition">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Join WhatsApp Channel</span>
+            </a>
+  <!-- Telegram Channel Link -->
+                <a href="https://t.me/commercewithamansingh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-500/15 border border-sky-500/40 text-sky-400 font-semibold hover:bg-sky-500/25 hover:text-sky-300 transition">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Join Telegram Channel</span>
+          </a>
+   
+        </div>
+
+        </div>
+
+        <div class="lg:col-span-7 p-8 sm:p-10 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-orange-400">Teaching Philosophy</span>
+
+          <h4 class="text-2xl font-bold leading-snug">
+            "Commerce is not a subject to be merely memorised; it is a subject to be understood through concepts and logic. Once you understand the real-life business logic behind every concept, learning becomes natural, meaningful, and effortless."
+          </h4>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Whether you are preparing for Class 11, Class 12 Boards, Calcutta University B.Com, CA, or want Job-Ready practical command over TallyPrime, Excel, Income Tax and GST compliance—every lecture and PDF note on this platform is built from scratch with real-world examples and visual flowcharts.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-navy-950/70 border border-slate-800">
+              <h5 class="font-bold text-amber-400 text-sm">1. Logic Before Rules</h5>
+              <p class="text-xs text-slate-400 mt-1">Whether it's Accounting, Income Tax, Audit, Law, Finance everything explained via practical scenarios.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-navy-950/70 border border-slate-800">
+              <h5 class="font-bold text-orange-400 text-sm">2. Exam + Industry Dual Focus</h5>
+              <p class="text-xs text-slate-400 mt-1">Score high in exams while learning how real companies maintain books in Tally & Excel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOUBT & CONTACT SECTION -->
+  <section id="doubt-section" class="py-12 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-6 sm:p-10">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-extrabold text-navy-900">Have a Doubt or Note Request?</h3>
+        <p class="text-slate-600 text-sm mt-1">Ask your Commerce, Tax, or Course query directly. We reply to students regularly.</p>
+      </div>
+
+      <form onsubmit="submitDoubt(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input type="text" required placeholder="Your Full Name" class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+
+        <select class="px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white">
+          <option>Class 11 / 12 Commerce</option>
+          <option>B.Com Student</option>
+          <option>CA Intermediate Aspirant</option>
+          <option>TallyPrime / GST / Excel Learner</option>
+        </select>
+
+        <input type="email" required placeholder="Your Email Address" class="sm:col-span-2 px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+
+        <textarea rows="3" required placeholder="Write your subject doubt or request a specific PDF topic..." class="sm:col-span-2 px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+
+        <button type="submit" class="sm:col-span-2 bg-navy-900 hover:bg-navy-800 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4 text-amber-400"></i> Send Message to Aman Sir
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-950 text-slate-400 py-10 border-t border-slate-800 mb-14 lg:mb-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <div>
+        <span class="font-bold text-white">COMMERCE WITH AMAN SINGH</span> • Your Success Starts Here
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/commercewithamansingh?cnvx=OHlwbnJmOGxnMGM3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-pink-500/50 hover:text-pink-400 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span>Instagram</span>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61570871154449" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:text-blue-400 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span>Facebook</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/aman-singh-16466532b/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 hover:text-sky-400 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- MOBILE BOTTOM NAVIGATION -->
+  <nav class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-navy-900 border-t border-slate-800 text-slate-300 flex justify-around py-2.5 text-[11px] font-semibold">
+    <a href="#home" class="flex flex-col items-center gap-1 hover:text-amber-400"><i data-lucide="home" class="w-4 h-4"></i>Home</a>
+    <a href="#pdf-library" class="flex flex-col items-center gap-1 text-emerald-400"><i data-lucide="file-text" class="w-4 h-4"></i>Free PDFs</a>
+    <a href="#courses" class="flex flex-col items-center gap-1 hover:text-amber-400"><i data-lucide="play-square" class="w-4 h-4"></i>Courses</a>
+    <a href="#educator" class="flex flex-col items-center gap-1 hover:text-amber-400"><i data-lucide="user" class="w-4 h-4"></i>About Aman Sir</a>
+    <a href="#doubt-section" class="flex flex-col items-center gap-1 text-amber-400"><i data-lucide="message-circle" class="w-4 h-4"></i>Ask Doubt</a>
+   
+ <!-- 
+<button onclick="toggleAdminModal()" class="flex flex-col items-center gap-1 text-amber-400"><i data-lucide="settings" class="w-4 h-4"></i>Admin</button>
+  -->
+
+   </nav>
+
+  <!-- MODALS -->
+
+  <!-- 1. STUDENT LOGIN MODAL -->
+  <div id="authModal" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeAuthModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <img src="cas logo web.png" alt="Commerce With Aman Singh Logo" class="w-12 h-12 rounded-2xl object-cover border border-amber-400/50 shadow-md mb-4">
+      <h3 class="text-xl font-extrabold text-navy-900">Student Portal Login</h3>
+      <p class="text-xs text-slate-500 mt-1">Sign in to access free lectures, track downloaded PDFs, and unlock watermark-protected video classes.</p>
+
+      <form onsubmit="handleStudentLogin(event)" class="space-y-4 mt-5">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Student Name</label>
+          <input type="text" id="loginName" required placeholder="Aman Singh" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Email Address (Used for Security Watermark)</label>
+          <input type="email" id="loginEmail" required placeholder="amansingh70231@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Course Level</label>
+          <select id="loginLevel" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white">
+            <option>Class 11</option>
+            <option>Class 12</option>
+            <option>B.Com</option>
+            <option>CA Foundation</option>
+            <option>CA Intermediate</option>
+            <option>CA Final</option>
+            <option>Working Professional</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-navy-950 font-extrabold py-3 rounded-xl shadow-lg hover:opacity-95 transition">
+          Access Student Dashboard →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VIDEO PLAYER MODAL -->
+  <div id="videoModal" class="hidden fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-4" oncontextmenu="return false;">
+    <div class="bg-navy-900 border border-slate-700 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl no-select">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 text-white">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+            <i data-lucide="lock" class="w-3 h-3"></i> Encrypted Stream • Right-Click & Download Disabled
+          </span>
+          <h3 id="videoModalTitle" class="font-bold text-base sm:text-lg mt-0.5">Lecture Title</h3>
+        </div>
+
+        <button onclick="closeVideoModal()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+        <iframe id="videoIframe" class="w-full h-full" src="" title="Secure Lecture Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div id="piracyWatermark" class="watermark-move pointer-events-none absolute z-20 bg-black/40 text-white/60 text-[11px] font-mono px-2.5 py-1 rounded border border-white/10">
+          student@commercewithamansingh
+        </div>
+      </div>
+
+      <div class="px-6 py-3 bg-navy-950 text-xs text-slate-400 flex flex-wrap justify-between gap-2">
+        <span>Educator: <strong class="text-amber-400">Aman Singh</strong></span>
+        <span>Piracy Warning: Screen recording or unauthorized distribution is strictly prohibited.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl">
+      <div class="bg-navy-900 text-white p-6 flex items-center justify-between">
+        <div>
+          <p class="text-[11px] uppercase tracking-wider text-amber-400 font-bold">Commerce With Aman Singh • Secure Checkout</p>
+          <h3 id="checkoutCourseTitle" class="font-bold text-base mt-1">Course Name</h3>
+        </div>
+
+        <button onclick="closeCheckoutModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div class="p-6 space-y-5">
+        <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <span class="text-sm font-semibold text-slate-600">Payable Amount (Incl. GST)</span>
+          <span id="checkoutPrice" class="text-2xl font-extrabold text-navy-900">₹999</span>
+        </div>
+
+        <div id="checkoutStatusBanner" class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs leading-relaxed">
+          <strong>Pre-Booking / Store Preview Mode:</strong> Paid batches are currently in final recording stage. You can pre-register your seat at ₹0 today!
+        </div>
+
+        <div class="space-y-2.5">
+          <p class="text-xs font-bold text-slate-700 uppercase">Supported Indian Payment Methods</p>
+          <div class="grid grid-cols-3 gap-2 text-center text-xs font-bold">
+            <div class="p-3 rounded-xl border-2 border-orange-500 bg-orange-50 text-orange-700">UPI / QR</div>
+            <div class="p-3 rounded-xl border border-slate-200 text-slate-600">Debit/Credit</div>
+            <div class="p-3 rounded-xl border border-slate-200 text-slate-600">NetBanking</div>
+          </div>
+        </div>
+
+        <button onclick="confirmCourseAction()" id="checkoutActionBtn" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-navy-950 font-extrabold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition">
+          Pre-Book Seat for Free (₹0)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATOR ADMIN PANEL -->
+  <div id="adminModal" class="hidden fixed inset-0 z-50 bg-navy-950/85 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl my-8">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-orange-600">Educator Control Room</span>
+          <h3 class="text-xl font-extrabold text-navy-900">Manage PDFs & Paid Store</h3>
+        </div>
+
+        <button onclick="toggleAdminModal()" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div class="mt-6">
+        <h4 class="font-bold text-sm text-navy-900 mb-3 flex items-center gap-2">
+          <i data-lucide="file-plus" class="w-4 h-4 text-emerald-600"></i> Upload / Link New Free PDF Note
+        </h4>
+
+        <form onsubmit="addNewPdf(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <input type="text" id="newPdfTitle" required placeholder="PDF Title (e.g., AS 14 Amalgamation Chart)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm bg-white">
+
+          <!-- UPDATED PDF CATEGORY SELECTION -->
+          <select id="newPdfCategory" required class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm bg-white">
+            <option value="CA Foundation">CA Foundation</option>
+
+            <optgroup label="CA Intermediate">
+              <option value="CA Intermediate|Group-I">Group-I</option>
+              <option value="CA Intermediate|Group-II">Group-II</option>
+            </optgroup>
+
+            <optgroup label="CA Final">
+              <option value="CA Final|Group-I">Group-I</option>
+              <option value="CA Final|Group-II">Group-II</option>
+            </optgroup>
+
+            <optgroup label="B.Com (Honours/General)">
+              <option value="Semester-I">Semester-I</option>
+              <option value="Semester-II">Semester-II</option>
+              <option value="Semester-III">Semester-III</option>
+              <option value="Semester-IV">Semester-IV</option>
+              <option value="Semester-V">Semester-V</option>
+              <option value="Semester-VI">Semester-VI</option>
+              <option value="Semester-VII">Semester-VII</option>
+            </optgroup>
+
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+            <option value="Class 11 & 12">Class 11 & 12</option>
+            <option value="Practical Skills">Practical Skills</option>
+          </select>
+
+          <input type="text" id="newPdfSubject" required placeholder="Subject Tag (e.g., Corporate Law / GST)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm bg-white">
+
+          <input type="url" id="newPdfLink" placeholder="Google Drive PDF Link (Optional)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm bg-white">
+
+          <button type="submit" class="sm:col-span-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs sm:text-sm transition">
+            + Publish Free PDF Instantly
+          </button>
+        </form>
+      </div>
+
+      <div class="mt-6">
+        <h4 class="font-bold text-sm text-navy-900 mb-3 flex items-center gap-2">
+          <i data-lucide="store" class="w-4 h-4 text-orange-600"></i> Paid Dukan Switch (Activate Paid Batches When Ready)
+        </h4>
+
+        <div id="adminCourseList" class="space-y-2.5 max-h-52 overflow-y-auto pr-1"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="hidden fixed bottom-20 lg:bottom-6 right-6 z-50 bg-navy-900 text-white border border-amber-500/40 px-5 py-3.5 rounded-2xl shadow-2xl text-xs sm:text-sm font-semibold flex items-center gap-2.5">
+    <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+    <span id="toastMsg">Action completed!</span>
+  </div>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+
+    // DEFAULT PDF DATA
+    const defaultPdfs = [
+      { id: 1, title: "Basics of Accounts", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 2, title: "Journal Entries", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 3, title: "Ledger Posting & Trial Balance", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 4, title: "Cash Book", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 5, title: "Day Books", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 6, title: "Bank Reconciliation Statement", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 7, title: "Rectification of Errors ", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 8, title: "Depreciation", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 9, title: "Provision & Reserve", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 10, title: "Final Accounts", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 11, title: "Non-Profit Organisation", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 12, title: "Single Entry System", category: "Class 11", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+
+      { id: 13, title: "Profit and Loss Appropriation", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 14, title: "Admission of Partner", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 15, title: "Retirement of Partner", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 16, title: "Death of Partner", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 17, title: "Dissolution of Partnership Firm", category: "Class 12", subject: "Financial Accounting", pages: "24 Pages", link: "#" },
+      { id: 18, title: "Accounting for Share Capital", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
+      { id: 19, title: "Accounting for Debentures", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
+      { id: 20, title: "Cash Flow Statement", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
+      { id: 21, title: "Ratio Analysis", category: "Class 12", subject: "Corporate Accounting", pages: "24 Pages", link: "#" },
+
+      { id: 22, title: "Financial Accounting-I", category: "Semester-I", subject: "Accounting Principles & Practice", pages: "50 Pages", link: "#" },
+      { id: 23, title: "Cost Accounting-I", category: "Semester-II", subject: "Cost Elements & Cost Sheet", pages: "50 Pages", link: "#" },
+      { id: 24, title: "Cost Accounting-II", category: "Semester-III", subject: "Costing Methods & Techniques", pages: "50 Pages", link: "#" },
+      { id: 25, title: "Direct Tax-I", category: "Semester-III", subject: "Income Tax Law", pages: "50 Pages", link: "#" },
+      { id: 26, title: "Financial Accounting-II", category: "Semester-IV", subject: "Partnership & Special Accounts", pages: "50 Pages", link: "#" },
+      { id: 27, title: "Direct Tax–II and e-filing of Tax Return", category: "Semester-IV", subject: "Tax Assessment & ITR Filing", pages: "50 Pages", link: "#" },
+      { id: 28, title: "Business Regulatory Framework", category: "Semester-IV", subject: "Mercantile & Commercial Laws", pages: "50 Pages", link: "#" },
+      { id: 29, title: "Corporate Accounting", category: "Semester-V", subject: "Company Accounts & Valuation", pages: "50 Pages", link: "#" },
+      { id: 30, title: "Accounting Theory and Regulations", category: "Semester-V", subject: "Accounting Standards & Framework (Only For General)", pages: "50 Pages", link: "#" },
+      { id: 31, title: "Company Law", category: "Semester-V", subject: "Companies Act, 2013", pages: "50 Pages", link: "#" },
+
+      { id: 32, title: "Financial Management", category: "Semester-VI", subject: "Corporate Finance & Decisions", pages: "50 Pages", link: "#" },
+      { id: 33, title: "Indirect Tax", category: "Semester-VI", subject: "GST & Customs Law", pages: "50 Pages", link: "#" },
+      { id: 34, title: "Auditing&Assurance", category: "Semester-VI", subject: "Audit Principles & Standards", pages: "50 Pages", link: "#" },
+      { id: 35, title: "Accounting Theory and Regulations", category: "Semester-VII", subject: "Accounting Standards & Framework (Only For Honours)", pages: "50 Pages", link: "#" },
+      { id: 36, title: "Advanced Corporate Accounting", category: "Semester-VII", subject: "Mergers, Reconstructions, Consolidation & Reporting", pages: "50 Pages", link: "#" },
+      { id: 37, title: "Management Accounting", category: "Semester-VII", subject: "Budgeting,Decision Making & Variance", pages: "50 Pages", link: "#" },
+      { id: 38, title: "Financial Statement Analysis", category: "Semester-VII", subject: "Ratio & Cash Flow Analysis", pages: "50 Pages", link: "#" },
+
+      { id: 39, title: "Accounting", category: "CA Foundation", subject: "Paper 1", pages: "250 Pages", link: "#" },
+      { id: 40, title: "Business Laws", category: "CA Foundation", subject: "Paper 2", pages: "250 Pages", link: "#" },
+
+      { id: 41, title: "Advanced Accounting", category: "CA Intermediate|Group-I", subject: "Paper 1", pages: "250 Pages", link: "#" },
+      { id: 42, title: "Corporate & Other Laws", category: "CA Intermediate|Group-I", subject: "Paper 2", pages: "220 Pages", link: "#" },
+      { id: 43, title: "Income Tax Law", category: "CA Intermediate|Group-I", subject: "Paper 3A", pages: "500 Pages", link: "#" },
+      { id: 44, title: "Goods & Services Tax", category: "CA Intermediate|Group-I", subject: "Paper 3B", pages: "400 Pages", link: "#" },
+      { id: 45, title: "Cost and Management Accounting", category: "CA Intermediate|Group-II", subject: "Paper 4", pages: "50 Pages", link: "#" },
+      { id: 46, title: "Auditing and Ethics", category: "CA Intermediate|Group-II", subject: "Paper 5", pages: "50 Pages", link: "#" },
+      { id: 47, title: "Financial Management", category: "CA Intermediate|Group-II", subject: "Paper 6A", pages: "50 Pages", link: "#" },
+      { id: 48, title: "Strategic Management", category: "CA Intermediate|Group-II", subject: "Paper 6B", pages: "50 Pages", link: "#" },
+
+      { id: 49, title: "Financial Reporting", category: "CA Final|Group-I", subject: "Paper 1", pages: "400 Pages", link: "#" },
+      { id: 50, title: "Advance Financial Management", category: "CA Final|Group-I", subject: "Paper 2", pages: "400 Pages", link: "#" },
+      { id: 51, title: "Advance Auditing, Assurance and Professional Ethics", category: "CA Final|Group-I", subject: "Paper 3", pages: "400 Pages", link: "#" },
+      { id: 52, title: "Direct Tax Laws & International Taxation", category: "CA Final|Group-II", subject: "Paper 4", pages: "400 Pages", link: "#" },
+      { id: 53, title: "Indirect Tax Laws", category: "CA Final|Group-II", subject: "Paper 5", pages: "400 Pages", link: "#" },
+      { id: 54, title: "Integrated Business Solutions (IBS)", category: "CA Final|Group-II", subject: "Paper 6", pages: "400 Pages", link: "#" },
+
+      { id: 55, title: "TallyPrime", category: "Practical Skills", subject: "Tally & Excel", pages: "50 Pages", link: "#" },
+      { id: 56, title: "Advance Excel", category: "Practical Skills", subject: "Tally & Excel", pages: "50 Pages", link: "#" }
+    ];
+
+    // DEFAULT COURSE DATA
+    const defaultCourses = [
+      {
+        id: 101,
+        type: "free",
+        title: "Financial Accounting-I",
+        level: "Class 11, B.Com & CA Foundation",
+        lessons: "6 Free Lectures",
+        price: 0,
+        status: "live",
+        videoUrl: "https://youtube.com/playlist?list=PLIoNwuw05mEw3akNDJpuAATsbPB3Eez99&si=jjiBPOcD1TF2AEV4",
+        desc: "Journal, Ledger, Trial Balance, Cash Book, BRS, Rectification, Depreciation, Final Accounts, NPO, Incomplete Records etc."
+      },
+      {
+        id: 102,
+        type: "free",
+        title: "Corporate Accounting",
+        level: "Class 12, B.Com & CA Foundation",
+        lessons: "8 Free Lectures",
+        price: 0,
+        status: "live",
+        videoUrl: "https://www.youtube.com/playlist?list=PLIoNwuw05mEzjZXddAZQi9sfuWmCOzVSY",
+        desc: "Share Capital, Debentures, Redemption of Preference Shares, Buy-Back of Equity Share, Valuation of Goodwill."
+      },
+      {
+        id: 103,
+        type: "free",
+        title: "Income Tax Act 2025",
+        level: " B.Com, CA Intermediate & CA Final",
+        lessons: "12 Free Lectures",
+        price: 0,
+        status: "live",
+        videoUrl: "https://youtube.com/playlist?list=PLIoNwuw05mExBN0ogYBYo3JYJI-LzbXi0&si=_W10qDi310_gRAh7",
+        desc: "Basics, Residential Status, Heads of Income, Clubbing, Set-off Carry Forward, Deductions, Return Filling Provisions etc."
+      },
+      {
+        id: 201,
+        type: "paid",
+        title: "CA Inter Advanced Accounting Full Exam Batch",
+        level: "CA Intermediate",
+        lessons: "65+ Hours • PDF Books Included",
+        price: 1499,
+        mrp: 3999,
+        status: "coming_soon",
+        desc: "Complete ICAI syllabus coverage with 100% conceptual logic, past exam questions, and test series."
+      },
+      {
+        id: 202,
+        type: "paid",
+        title: "Complete GST, Income Tax, TallyPrime & Advance Excel Masterclass",
+        level: "Practical Corporate Course",
+        lessons: "40+ Hours • Live Portal Filing",
+        price: 999,
+        mrp: 2499,
+        status: "coming_soon",
+        desc: "Become an independent accounting & taxation professional with real return filing practice."
+      },
+      {
+        id: 203,
+        type: "paid",
+        title: "B.Com & Class 12 Accountancy Rankers Batch",
+        level: "Boards & University",
+        lessons: "50+ Hours • Doubt Support",
+        price: 799,
+        mrp: 1999,
+        status: "coming_soon",
+        desc: "Chapter-wise concept lectures, revision marathons, and exam presentation techniques."
+      }
+    ];
+
+    // STATE MANAGEMENT WITH LOCALSTORAGE
+    let pdfs = JSON.parse(localStorage.getItem('cwas_pdfs')) || defaultPdfs;
+    let courses = JSON.parse(localStorage.getItem('cwas_courses')) || defaultCourses;
+    let currentPdfCategory = 'All';
+    let currentCourseTab = 'free';
+    let studentUser = JSON.parse(localStorage.getItem('cwas_student')) || null;
+    let downloadedPdfs = JSON.parse(localStorage.getItem('cwas_downloads')) || [];
+    let selectedCheckoutCourse = null;
+
+    // MIGRATE OLD SAVED CA CATEGORIES
+    // This keeps previously uploaded PDFs and converts old category names.
+    const oldCategoryMap = {
+      "CA Inter Group-I": "CA Intermediate|Group-I",
+      "CA Inter Group-II": "CA Intermediate|Group-II",
+      "CA Intermediate Group-I": "CA Intermediate|Group-I",
+      "CA Intermediate Group-II": "CA Intermediate|Group-II",
+      "CA Final Group-I": "CA Final|Group-I",
+      "CA Final Group-II": "CA Final|Group-II"
+    };
+
+    const caGroupCategories = {
+      41: "CA Intermediate|Group-I",
+      42: "CA Intermediate|Group-I",
+      43: "CA Intermediate|Group-I",
+      44: "CA Intermediate|Group-I",
+      45: "CA Intermediate|Group-II",
+      46: "CA Intermediate|Group-II",
+      47: "CA Intermediate|Group-II",
+      48: "CA Intermediate|Group-II",
+      49: "CA Final|Group-I",
+      50: "CA Final|Group-I",
+      51: "CA Final|Group-I",
+      52: "CA Final|Group-II",
+      53: "CA Final|Group-II",
+      54: "CA Final|Group-II"
+    };
+
+    const migratedPdfs = pdfs.map(pdf => {
+      let newCategory = oldCategoryMap[pdf.category];
+
+      // Handle older generic categories if they exist in saved data.
+      if (pdf.category === "CA Inter" || pdf.category === "CA Intermediate" || pdf.category === "CA Final") {
+        newCategory = caGroupCategories[pdf.id] || pdf.category;
+      }
+
+      // Correct old default PDF categories by their IDs.
+      if (caGroupCategories[pdf.id] && (
+        pdf.category.startsWith("CA Inter") ||
+        pdf.category.startsWith("CA Intermediate") ||
+        pdf.category.startsWith("CA Final")
+      )) {
+        newCategory = caGroupCategories[pdf.id];
+      }
+
+      return newCategory ? { ...pdf, category: newCategory } : pdf;
+    });
+
+    if (migratedPdfs.some((pdf, index) => pdf.category !== pdfs[index].category)) {
+      pdfs = migratedPdfs;
+      localStorage.setItem('cwas_pdfs', JSON.stringify(pdfs));
+    }
+
+    // SAVE STATE
+    function saveState() {
+      localStorage.setItem('cwas_pdfs', JSON.stringify(pdfs));
+      localStorage.setItem('cwas_courses', JSON.stringify(courses));
+      localStorage.setItem('cwas_downloads', JSON.stringify(downloadedPdfs));
+    }
+
+    // TOAST NOTIFICATION
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.remove('hidden');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+
+    let showAllPdfs = false;
+    const INITIAL_PDF_LIMIT = 6;
+
+    function toggleShowAllPdfs() {
+      showAllPdfs = !showAllPdfs;
+      renderPdfs();
+      if (!showAllPdfs) {
+        const section = document.getElementById('pdf-library');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // PDF CATEGORY FILTER
+    function setPdfCategory(cat) {
+      currentPdfCategory = cat;
+      showAllPdfs = false;
+
+      document.querySelectorAll('.pdf-cat-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') === `setPdfCategory('${cat}')`) {
+          btn.className = 'pdf-cat-btn bg-navy-900 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition';
+        } else {
+          btn.className = 'pdf-cat-btn bg-white text-slate-700 border border-slate-200 hover:border-navy-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition';
+        }
+      });
+
+      renderPdfs();
+    }
+
+    // RENDER PDF CARDS
+    function renderPdfs() {
+      const query = document.getElementById('pdfSearchInput').value.toLowerCase().trim();
+      const grid = document.getElementById('pdfGrid');
+
+      let loadMoreWrap = document.getElementById('pdfLoadMoreWrap');
+      if (!loadMoreWrap) {
+        loadMoreWrap = document.createElement('div');
+        loadMoreWrap.id = 'pdfLoadMoreWrap';
+        loadMoreWrap.className = 'text-center mt-8';
+        grid.after(loadMoreWrap);
+      }
+
+      document.getElementById('heroPdfCount').textContent = pdfs.length + '+';
+
+      const filtered = pdfs.filter(item => {
+        let matchCat = false;
+
+        if (currentPdfCategory === 'All') {
+          matchCat = true;
+        }
+
+        else if (currentPdfCategory === 'B.Com') {
+          matchCat = /^Semester-(I|II|III|IV|V|VI|VII)$/.test(item.category);
+        }
+
+        else if (currentPdfCategory === 'CA Intermediate') {
+          matchCat = item.category.startsWith('CA Intermediate|');
+        }
+
+        else if (currentPdfCategory === 'CA Final') {
+          matchCat = item.category.startsWith('CA Final|');
+        }
+
+        else {
+          matchCat = item.category === currentPdfCategory;
+        }
+
+        const matchQuery =
+          item.title.toLowerCase().includes(query) ||
+          item.subject.toLowerCase().includes(query) ||
+          item.category.toLowerCase().includes(query);
+
+        return matchCat && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-10 text-slate-500 text-sm">
+            No PDF notes matched your search. Try another keyword!
+          </div>
+        `;
+        loadMoreWrap.innerHTML = '';
+        return;
+      }
+
+      const shouldLimit = currentPdfCategory === 'All' && query === '' && filtered.length > INITIAL_PDF_LIMIT;
+      const visiblePdfs = (shouldLimit && !showAllPdfs) ? filtered.slice(0, INITIAL_PDF_LIMIT) : filtered;
+
+      grid.innerHTML = visiblePdfs.map(pdf => {
+        // Display a clean category label on the PDF card.
+        const displayCategory = pdf.category.replace('|', ' • ');
+
+        return `
+          <div class="bg-white rounded-2xl border border-slate-200 hover:border-orange-400 p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-navy-900 text-amber-400">${displayCategory}</span>
+                <span class="text-[11px] font-semibold text-slate-500">${pdf.pages}</span>
+              </div>
+
+              <h3 class="font-bold text-base text-navy-900 group-hover:text-orange-600 transition leading-snug">${pdf.title}</h3>
+
+              <p class="text-xs text-slate-500 mt-2 flex items-center gap-1.5">
+                <i data-lucide="book-open" class="w-3.5 h-3.5 text-orange-500"></i> ${pdf.subject}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-extrabold text-emerald-600">FREE (₹0)</span>
+
+              <button onclick="downloadPdf(${pdf.id})" class="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-orange-500 text-white hover:text-navy-950 font-bold text-xs px-4 py-2.5 rounded-xl transition">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> Download PDF
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      if (shouldLimit) {
+        const remaining = filtered.length - INITIAL_PDF_LIMIT;
+        loadMoreWrap.innerHTML = showAllPdfs
+          ? `<button onclick="toggleShowAllPdfs()" class="inline-flex items-center gap-2 bg-slate-200 hover:bg-slate-300 text-navy-900 font-bold text-sm px-6 py-3 rounded-xl transition">
+               Show Less PDFs <i data-lucide="chevron-up" class="w-4 h-4"></i>
+             </button>`
+          : `<button onclick="toggleShowAllPdfs()" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-orange-500 text-white hover:text-navy-950 font-bold text-sm px-6 py-3 rounded-xl shadow-md transition">
+               Show All ${filtered.length} PDFs (+${remaining} More) <i data-lucide="chevron-down" class="w-4 h-4"></i>
+             </button>`;
+      } else {
+        loadMoreWrap.innerHTML = '';
+      }
+
+      lucide.createIcons();
+    }
+
+    // DOWNLOAD PDF
+    function downloadPdf(id) {
+      const pdf = pdfs.find(p => p.id === id);
+      if (!pdf) return;
+
+      if (!downloadedPdfs.includes(pdf.title)) {
+        downloadedPdfs.push(pdf.title);
+        saveState();
+        updateStudentDashboardUI();
+      }
+
+      if (pdf.link && pdf.link !== '#') {
+        window.open(pdf.link, '_blank');
+      } else {
+        const content = `COMMERCE WITH AMAN SINGH
+Tagline: YOUR SUCCESS STARTS HERE
+
+Study Material: ${pdf.title}
+Level: ${pdf.category}
+Subject: ${pdf.subject}
+
+Prepared by Aman Singh (Accounting & Taxation Expert).
+
+Link your real Google Drive PDF URL via the Educator Admin panel to serve the full PDF file!`;
+
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+
+        a.href = url;
+        a.download = `${pdf.title.replace(/[^a-z0-9]/gi, '_')}.txt`;
+        a.click();
+
+        URL.revokeObjectURL(url);
+      }
+
+      showToast(`Downloaded: "${pdf.title}"`);
+    }
+
+    // RENDER COURSES
+    function switchCourseTab(tab) {
+      currentCourseTab = tab;
+
+      const freeBtn = document.getElementById('tabFreeCourses');
+      const paidBtn = document.getElementById('tabPaidCourses');
+
+      if (tab === 'free') {
+        freeBtn.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 text-white transition';
+        paidBtn.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-navy-900 transition flex items-center gap-1.5';
+      } else {
+        paidBtn.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 text-white transition flex items-center gap-1.5';
+        freeBtn.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-navy-900 transition';
+      }
+
+      renderCourses();
+    }
+
+    function renderCourses() {
+      const grid = document.getElementById('coursesGrid');
+      const list = courses.filter(c => c.type === currentCourseTab);
+
+      grid.innerHTML = list.map(course => {
+        const isFree = course.type === 'free';
+        const isLivePaid = course.status === 'live_paid';
+
+        return `
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+            <div>
+              <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white relative">
+                <div class="flex items-center justify-between text-[11px] font-bold mb-2">
+                  <span class="text-amber-400 uppercase tracking-wider">${course.level}</span>
+
+                  ${isFree
+                    ? '<span class="bg-emerald-500 text-navy-950 px-2.5 py-0.5 rounded-full">FREE ACTIVE</span>'
+                    : isLivePaid
+                      ? '<span class="bg-orange-500 text-white px-2.5 py-0.5 rounded-full">ENROLLING NOW</span>'
+                      : '<span class="bg-amber-400/20 text-amber-300 border border-amber-400/40 px-2.5 py-0.5 rounded-full">LAUNCHING SOON</span>'
+                  }
+                </div>
+
+                <h3 class="font-extrabold text-lg leading-snug">${course.title}</h3>
+
+                <p class="text-xs text-slate-300 mt-2 flex items-center gap-1.5">
+                  <i data-lucide="play-circle" class="w-4 h-4 text-orange-400"></i> ${course.lessons}
+                </p>
+              </div>
+
+              <div class="p-6">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${course.desc}</p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              ${isFree ? `
+                <div>
+                  <span class="text-lg font-extrabold text-emerald-600">FREE</span>
+                  <span class="block text-[10px] text-slate-400">Instant Access</span>
+                </div>
+<button onclick="window.open('${course.videoUrl}', '_blank')" class="bg-navy-900 hover:bg-orange-500 text-white font-bold text-xs px-5 py-3 rounded-xl transition flex items-center gap-1.5">
+      <i data-lucide="play" class="w-3.5 h-3.5"></i> Watch Now
+    </button>` : `
+                <div>
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-xl font-extrabold text-navy-900">₹${course.price}</span>
+                    <span class="text-xs line-through text-slate-400">₹${course.mrp}</span>
+                  </div>
+                  <span class="block text-[10px] text-orange-600 font-semibold">${isLivePaid ? 'Full Course Access' : 'Pre-Booking Open'}</span>
+                </div>
+
+                <button onclick="openCheckoutModal(${course.id})" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:opacity-95 text-navy-950 font-extrabold text-xs px-5 py-3 rounded-xl shadow-md transition">
+                  ${isLivePaid ? 'Buy Course →' : 'Pre-Register'}
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    // SECURE VIDEO PLAYER LOGIC
+    function openVideoModal(title, url) {
+      document.getElementById('videoModalTitle').textContent = title;
+      document.getElementById('videoIframe').src = url;
+
+      const watermarkText = studentUser
+        ? `${studentUser.email} • ID:${Math.floor(100000 + Math.random() * 900000)}`
+        : 'GUEST PREVIEW • COMMERCE WITH AMAN SINGH';
+
+      document.getElementById('piracyWatermark').textContent = watermarkText;
+      document.getElementById('videoModal').classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+      document.getElementById('videoIframe').src = '';
+      document.getElementById('videoModal').classList.add('hidden');
+    }
+
+    // CHECKOUT MODAL LOGIC
+    function openCheckoutModal(courseId) {
+      const course = courses.find(c => c.id === courseId);
+      if (!course) return;
+
+      selectedCheckoutCourse = course;
+
+      document.getElementById('checkoutCourseTitle').textContent = course.title;
+
+      const isLivePaid = course.status === 'live_paid';
+
+      document.getElementById('checkoutPrice').textContent = isLivePaid
+        ? `₹${course.price}`
+        : `₹0 (Pre-Book)`;
+
+      document.getElementById('checkoutStatusBanner').innerHTML = isLivePaid
+        ? `<strong>Instant Enrollment:</strong> Complete UPI/Card payment to unlock all recorded lectures and PDF books immediately.`
+        : `<strong>Dukan Preview Mode:</strong> This batch is currently being finalized. Reserve your seat free now and get notified on launch!`;
+
+      document.getElementById('checkoutActionBtn').textContent = isLivePaid
+        ? `Pay ₹${course.price} via Razorpay / UPI`
+        : `Confirm Free Pre-Registration`;
+
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function confirmCourseAction() {
+      if (!selectedCheckoutCourse) return;
+
+      closeCheckoutModal();
+      showToast(`Success! Seat reserved for "${selectedCheckoutCourse.title}".`);
+    }
+
+    // STUDENT LOGIN & PORTAL LOGIC
+    function openAuthModal() {
+      document.getElementById('authModal').classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function handleStudentLogin(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('loginName').value.trim();
+      const email = document.getElementById('loginEmail').value.trim();
+      const level = document.getElementById('loginLevel').value;
+
+      studentUser = { name, email, level };
+
+      localStorage.setItem('cwas_student', JSON.stringify(studentUser));
+
+      closeAuthModal();
+      updateStudentDashboardUI();
+
+      showToast(`Welcome, ${name}! Secure Student Portal unlocked.`);
+    }
+
+    function logoutStudent() {
+      studentUser = null;
+
+      localStorage.removeItem('cwas_student');
+
+      document.getElementById('studentDashboard').classList.add('hidden');
+
+      document.getElementById('authArea').innerHTML = `
+        <button onclick="openAuthModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-navy-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-orange-500/25 transition">
+          <i data-lucide="user-circle" class="w-4 h-4"></i> Student Login
+        </button>
+      `;
+
+      lucide.createIcons();
+
+      showToast('Logged out from Student Portal.');
+    }
+
+    function closeDashboard() {
+      document.getElementById('studentDashboard').classList.add('hidden');
+    }
+
+    function updateStudentDashboardUI() {
+      if (!studentUser) return;
+
+      document.getElementById('studentDashboard').classList.remove('hidden');
+
+      document.getElementById('studentNameDisplay').textContent = studentUser.name;
+      document.getElementById('studentEmailDisplay').textContent = studentUser.email;
+
+      document.getElementById('authArea').innerHTML = `
+        <button onclick="document.getElementById('studentDashboard').classList.remove('hidden')" class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs sm:text-sm px-4 py-2 rounded-xl">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i> My Portal
+        </button>
+      `;
+
+      const freeCourses = courses.filter(c => c.type === 'free');
+
+      document.getElementById('enrolledCount').textContent = `${freeCourses.length} Free Active`;
+
+      document.getElementById('enrolledCoursesList').innerHTML = freeCourses.map(c => `
+        <div class="flex items-center justify-between p-2.5 rounded-xl bg-navy-950 border border-slate-800">
+          <span class="text-xs font-medium text-slate-200 truncate pr-2">${c.title}</span>
+
+          <button onclick="openVideoModal('${c.title.replace(/'/g, "\\'")}', '${c.videoUrl}')" class="text-[11px] font-bold text-amber-400 hover:underline shrink-0">Play</button>
+        </div>
+      `).join('');
+
+      document.getElementById('downloadedCount').textContent = `${downloadedPdfs.length} Files`;
+
+      if (downloadedPdfs.length > 0) {
+        document.getElementById('downloadedNotesList').innerHTML = downloadedPdfs.map(title => `
+          <div class="flex items-center gap-2 p-2 rounded-lg bg-navy-950 border border-slate-800">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+            <span class="truncate">${title}</span>
+          </div>
+        `).join('');
+      } else {
+        document.getElementById('downloadedNotesList').innerHTML = `
+          <p class="text-slate-500 italic">No PDFs downloaded yet in this session.</p>
+        `;
+      }
+
+      const progress = Math.min(100, 35 + downloadedPdfs.length * 10);
+
+      document.getElementById('progressPercent').textContent = progress + '%';
+      document.getElementById('progressBar').style.width = progress + '%';
+
+      lucide.createIcons();
+    }
+
+    // EDUCATOR ADMIN PANEL LOGIC
+    function toggleAdminModal() {
+      const modal = document.getElementById('adminModal');
+
+      modal.classList.toggle('hidden');
+
+      if (!modal.classList.contains('hidden')) {
+        renderAdminCourses();
+      }
+    }
+
+    // ADD NEW PDF
+    function addNewPdf(e) {
+      e.preventDefault();
+
+      const title = document.getElementById('newPdfTitle').value.trim();
+      const category = document.getElementById('newPdfCategory').value;
+      const subject = document.getElementById('newPdfSubject').value.trim();
+      const link = document.getElementById('newPdfLink').value.trim() || '#';
+
+      if (!title || !category || !subject) {
+        showToast('Please fill all required PDF details.');
+        return;
+      }
+
+      pdfs.unshift({
+        id: Date.now(),
+        title,
+        category,
+        subject,
+        pages: "New PDF",
+        link
+      });
+
+      saveState();
+      renderPdfs();
+
+      e.target.reset();
+
+      showToast(`New Free PDF "${title}" published!`);
+    }
+
+    // RENDER ADMIN COURSES
+    function renderAdminCourses() {
+      const container = document.getElementById('adminCourseList');
+      const paidList = courses.filter(c => c.type === 'paid');
+
+      container.innerHTML = paidList.map(c => {
+        const isLive = c.status === 'live_paid';
+
+        return `
+          <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 border border-slate-200 gap-3">
+            <div>
+              <p class="font-bold text-xs sm:text-sm text-navy-900">${c.title}</p>
+
+              <p class="text-[11px] text-slate-500">
+                Price: ₹${c.price} • Current Status:
+                <strong class="${isLive ? 'text-emerald-600' : 'text-amber-600'}">
+                  ${isLive ? 'LIVE PAID' : 'COMING SOON'}
+                </strong>
+              </p>
+            </div>
+
+            <button onclick="toggleCourseStatus(${c.id})" class="px-3.5 py-2 rounded-lg text-xs font-bold shrink-0 transition ${isLive ? 'bg-slate-200 text-slate-800' : 'bg-orange-500 text-navy-950'}">
+              ${isLive ? 'Set Coming Soon' : 'Make Paid Live'}
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // TOGGLE PAID COURSE STATUS
+    function toggleCourseStatus(id) {
+      courses = courses.map(c => {
+        if (c.id === id) {
+          c.status = c.status === 'live_paid' ? 'coming_soon' : 'live_paid';
+        }
+
+        return c;
+      });
+
+      saveState();
+      renderAdminCourses();
+      renderCourses();
+
+      showToast('Course store status updated!');
+    }
+
+    // SUBMIT DOUBT
+    function submitDoubt(e) {
+      e.preventDefault();
+
+      e.target.reset();
+
+      showToast('Your query has been sent to Aman Singh!');
+    }
+
+    // INITIALIZE APP ON LOAD
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPdfs();
+      renderCourses();
+
+      if (studentUser) {
+        updateStudentDashboardUI();
+      }
+
+      lucide.createIcons();
+    });
+
+  </script>
+</body>
+</html>
