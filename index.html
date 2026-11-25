@@ -44,6 +44,145 @@
       user-select: none;
       -webkit-user-select: none;
     }
+
+/* ===== ACCOUNTS GAMES SECTION (TEAL & ORANGE THEME) ===== */
+    #accounts-games {
+      --cg-teal-dark: #042f2e;
+      --cg-teal: #0f766e;
+      --cg-teal-mid: #0d9488;
+      --cg-orange: #f97316;
+      --cg-amber: #f59e0b;
+      --cg-emerald: #10b981;
+      --cg-rose: #e11d48;
+      --cg-violet: #7c3aed;
+      --cg-border: #e2e8f0;
+    }
+    .cg-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #115e59 55%, #0d9488 100%);
+      border-radius: 24px;
+      padding: 32px 20px 56px;
+      text-align: center;
+      color: #fff;
+    }
+    .cg-tabs-bar {
+      background: #fff;
+      border-radius: 18px;
+      padding: 8px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      max-width: 780px;
+      margin: -30px auto 0;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e2e8f0;
+      scrollbar-width: none;
+    }
+    .cg-tabs-bar::-webkit-scrollbar { display: none; }
+    .cg-tab-btn {
+      flex: 1;
+      min-width: 150px;
+      border: none;
+      background: transparent;
+      color: #0f172a;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+    .cg-tab-btn.active {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.35);
+    }
+    .cg-shell { max-width: 780px; margin: 0 auto; }
+    .cg-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+    }
+    .cg-level-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+      gap: 10px;
+      max-height: 170px;
+      overflow-y: auto;
+      padding: 4px 2px 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .cg-lvl-tile {
+      border: 1.5px solid #e2e8f0;
+      border-left: 4px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 9px 10px;
+      background: #f8fafc;
+      cursor: pointer;
+      text-align: left;
+      transition: 0.15s;
+    }
+    .cg-lvl-tile.beginner { border-left-color: #10b981; }
+    .cg-lvl-tile.intermediate { border-left-color: #f97316; }
+    .cg-lvl-tile.expert { border-left-color: #7c3aed; }
+    .cg-lvl-tile.unlocked { background: #fff; }
+    .cg-lvl-tile.completed { background: #ecfdf5; border-color: #a7f3d0; }
+    .cg-lvl-tile.active { border: 2px solid #0d9488; background: #f0fdfa; }
+    .cg-lvl-tile.locked { opacity: 0.55; cursor: not-allowed; }
+    .cg-opt-btn {
+      min-width: 112px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1.5px solid #cbd5e1;
+      background: #fff;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .cg-opt-btn:hover:not(:disabled) { border-color: #0f766e; background: #f0fdfa; color: #0f766e; }
+    .cg-opt-btn.correct { background: #10b981; color: #fff; border-color: #10b981; }
+    .cg-opt-btn.wrong { background: #e11d48; color: #fff; border-color: #e11d48; }
+    .cg-tb-table { width: 100%; border-collapse: collapse; }
+    .cg-tb-table thead { background: #0f766e; color: #fff; }
+    .cg-tb-table th, .cg-tb-table td { padding: 12px; text-align: left; font-size: 0.9rem; }
+    .cg-tb-table tbody tr { border-bottom: 1px solid #e2e8f0; }
+    .cg-circle-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid #cbd5e1; background: #fff; color: #64748b;
+      font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: 0.15s;
+    }
+    .cg-circle-btn.selected { background: #0f766e; color: #fff; border-color: #0f766e; }
+    .cg-circle-btn.right { background: #10b981; color: #fff; border-color: #10b981; }
+    .cg-circle-btn.wrong { background: #e11d48; color: #fff; border-color: #e11d48; }
+    .cg-primary-btn {
+      background: linear-gradient(135deg, #f97316, #f59e0b);
+      color: #070D19; border: none; padding: 12px 22px;
+      border-radius: 12px; font-weight: 800; font-size: 0.9rem;
+      cursor: pointer; transition: 0.15s;
+    }
+    .cg-primary-btn:hover:not(:disabled) { opacity: 0.92; transform: translateY(-1px); }
+    .cg-primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .cg-badge-toast {
+      position: fixed; bottom: 82px; left: 50%;
+      transform: translateX(-50%) translateY(140px);
+      background: linear-gradient(135deg, #0f172a, #115e59);
+      color: #fff; border: 1px solid rgba(245, 158, 11, 0.5);
+      padding: 14px 22px; border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      font-weight: 700; font-size: 0.9rem; text-align: center;
+      transition: transform 0.35s ease; z-index: 60; min-width: 240px;
+    }
+    .cg-badge-toast.show { transform: translateX(-50%) translateY(0); }
+
   </style>
 </head>
 
@@ -79,6 +218,12 @@
           Free PDFs <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] px-1.5 py-0.5 rounded-full font-bold">LIVE</span>
         </a>
         <a href="#courses" class="hover:text-amber-400 transition">Video Batches</a>
+
+
+<a href="#accounts-games" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          Games <span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-[10px] px-1.5 py-0.5 rounded-full font-bold">Fun</span>
+        </a>
+
         <a href="#educator" class="hover:text-amber-400 transition">About Aman Sir</a>
         <a href="#doubt-section" class="hover:text-amber-400 transition">Ask Doubt</a>
       </nav>
@@ -324,6 +469,53 @@
     </div>
   </section>
 
+
+<!-- ACCOUNTS GAMES SECTION -->
+  <section id="accounts-games" class="py-16 sm:py-20 bg-gradient-to-b from-teal-50/70 via-slate-50 to-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Banner -->
+      <div class="cg-banner">
+        <span class="inline-block text-[11px] font-extrabold uppercase tracking-widest text-amber-400 bg-white/10 border border-amber-400/30 px-3 py-1 rounded-full mb-3">
+          CAS Interactive Practice Zone · Free To Play
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+          Accounts Games — Learn Accounting by Playing
+        </h2>
+        <p class="text-teal-100 text-xs sm:text-sm max-w-2xl mx-auto mt-2.5 leading-relaxed">
+          Classify ledgers, tally the trial balance, and practice journal entries across 50 interactive levels designed for Class 11–12, B.Com, CA &amp; TallyPrime learners.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="cg-tabs-bar">
+        <button class="cg-tab-btn active" id="cg-tab-classify" onclick="cgSwitchGame('classify')">📁 Classify It</button>
+        <button class="cg-tab-btn" id="cg-tab-trial" onclick="cgSwitchGame('trial')">⚖️ Trial Balance Puzzle</button>
+        <button class="cg-tab-btn" id="cg-tab-journal" onclick="cgSwitchGame('journal')">📒 Journal Builder</button>
+      </div>
+
+      <!-- Stats + Game Container -->
+      <div class="cg-shell">
+        <div class="flex items-center justify-between mt-4 mb-3 px-1 text-xs sm:text-sm font-semibold text-slate-500">
+          <button onclick="cgResetProgress()" class="text-xs font-bold text-slate-500 hover:text-rose-600 underline">
+            Reset Game Score
+          </button>
+          <div class="flex items-center gap-3">
+            <span>Points <b id="cg-ui-points" class="text-orange-600 font-extrabold">0</b></span>
+            <span>·</span>
+            <span>Streak <b id="cg-ui-streak" class="text-teal-700 font-extrabold">0</b> 🔥</span>
+          </div>
+        </div>
+
+        <div class="cg-card" id="cg-game-container"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GAME BADGE TOAST -->
+  <div class="cg-badge-toast" id="cg-badge-toast"></div>
+
   <!-- ABOUT EDUCATOR SECTION -->
   <section id="educator" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-navy-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 text-white">
@@ -461,6 +653,7 @@
     <a href="#home" class="flex flex-col items-center gap-1 hover:text-amber-400"><i data-lucide="home" class="w-4 h-4"></i>Home</a>
     <a href="#pdf-library" class="flex flex-col items-center gap-1 text-emerald-400"><i data-lucide="file-text" class="w-4 h-4"></i>Free PDFs</a>
     <a href="#courses" class="flex flex-col items-center gap-1 hover:text-amber-400"><i data-lucide="play-square" class="w-4 h-4"></i>Courses</a>
+    <a href="#accounts-games" class="flex flex-col items-center gap-1 text-orange-400"><i data-lucide="gamepad-2" class="w-4 h-4"></i>Games</a>
     <a href="#educator" class="flex flex-col items-center gap-1 hover:text-amber-400"><i data-lucide="user" class="w-4 h-4"></i>About Aman Sir</a>
     <a href="#doubt-section" class="flex flex-col items-center gap-1 text-amber-400"><i data-lucide="message-circle" class="w-4 h-4"></i>Ask Doubt</a>
    
@@ -1318,6 +1511,527 @@ Link your real Google Drive PDF URL via the Educator Admin panel to serve the fu
       lucide.createIcons();
     });
 
+  </script>
+<!-- ACCOUNTS GAMES JAVASCRIPT -->
+  <script>
+    const CG_TOTAL_LEVELS = 50;
+    const cgFormatINR = (num) => '₹' + Number(num).toLocaleString('en-IN');
+
+    function cgSeededRandom(seed) {
+      let x = Math.sin(seed * 9999.13) * 10000;
+      return x - Math.floor(x);
+    }
+    function cgSeededShuffle(arr, seed) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(cgSeededRandom(seed + i * 17) * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+    function cgGetDifficulty(lvl) {
+      if (lvl <= 15) return 'Beginner';
+      if (lvl <= 35) return 'Intermediate';
+      return 'Expert';
+    }
+
+    const cgDefaultState = {
+      points: 0,
+      streak: 0,
+      activeGame: 'classify',
+      unlocked: { classify: 1, trial: 1, journal: 1 },
+      currentLevel: { classify: 1, trial: 1, journal: 1 }
+    };
+
+    let cgState = JSON.parse(localStorage.getItem('cwas_games_state')) || JSON.parse(JSON.stringify(cgDefaultState));
+    let cgActiveTimer = null;
+
+    function cgSaveState() {
+      localStorage.setItem('cwas_games_state', JSON.stringify(cgState));
+      const ptsEl = document.getElementById('cg-ui-points');
+      const strEl = document.getElementById('cg-ui-streak');
+      if (ptsEl) ptsEl.textContent = cgState.points;
+      if (strEl) strEl.textContent = cgState.streak;
+    }
+
+    function cgResetProgress() {
+      if (confirm('Kya aap saare game points aur unlocked levels reset karna chahte hain?')) {
+        cgState = JSON.parse(JSON.stringify(cgDefaultState));
+        cgSaveState();
+        cgRenderGame();
+      }
+    }
+
+    function cgShowBadgeToast(msg) {
+      const t = document.getElementById('cg-badge-toast');
+      if (!t) return;
+      t.innerHTML = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3200);
+    }
+
+    function cgClearTimer() {
+      if (cgActiveTimer) {
+        clearInterval(cgActiveTimer);
+        cgActiveTimer = null;
+      }
+    }
+
+    function cgSwitchGame(game) {
+      cgClearTimer();
+      cgState.activeGame = game;
+      document.querySelectorAll('.cg-tab-btn').forEach(b => b.classList.remove('active'));
+      const activeTab = document.getElementById('cg-tab-' + game);
+      if (activeTab) activeTab.classList.add('active');
+      cgSaveState();
+      cgRenderGame();
+    }
+
+    function cgSelectLevel(game, lvl) {
+      if (lvl > cgState.unlocked[game]) return;
+      cgClearTimer();
+      cgState.currentLevel[game] = lvl;
+      cgSaveState();
+      cgRenderGame();
+    }
+
+    function cgRenderLevelGrid(game) {
+      let html = '<div class="cg-level-grid">';
+      const unlocked = cgState.unlocked[game];
+      const current = cgState.currentLevel[game];
+
+      for (let i = 1; i <= CG_TOTAL_LEVELS; i++) {
+        const diff = cgGetDifficulty(i);
+        const diffClass = diff.toLowerCase();
+        let statusClass = 'locked';
+        let icon = '🔒';
+
+        if (i < unlocked) { statusClass = 'completed unlocked'; icon = '✅'; }
+        if (i === unlocked) { statusClass = 'unlocked'; icon = '⭐'; }
+        if (i === current) { statusClass += ' active'; }
+
+        html += `
+          <button class="cg-lvl-tile ${diffClass} ${statusClass}" onclick="cgSelectLevel('${game}', ${i})" ${i > unlocked ? 'disabled' : ''}>
+            <div style="font-weight:800; font-size:0.88rem; color:#0f172a;">${icon} ${i}</div>
+            <div style="font-size:0.7rem; color:#64748b; margin-top:3px;">${diff}</div>
+          </button>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
+    /* ===== GAME 1: CLASSIFY IT ===== */
+    const CG_CLASSIFY_BANK = [
+      { name: 'Cash in Hand', type: 'Asset' }, { name: 'Furniture', type: 'Asset' },
+      { name: 'Sundry Debtors', type: 'Asset' }, { name: 'Machinery', type: 'Asset' },
+      { name: 'Land & Building', type: 'Asset' }, { name: 'Bank Balance', type: 'Asset' },
+      { name: 'Closing Stock', type: 'Asset' }, { name: 'Goodwill', type: 'Asset' },
+      { name: 'Bills Receivable', type: 'Asset' }, { name: 'Prepaid Insurance', type: 'Asset' },
+      { name: 'Accrued Income', type: 'Asset' }, { name: 'Computer & Laptop', type: 'Asset' },
+      { name: 'Sundry Creditors', type: 'Liability' }, { name: 'Bank Loan', type: 'Liability' },
+      { name: 'Bank Overdraft', type: 'Liability' }, { name: 'Bills Payable', type: 'Liability' },
+      { name: 'Outstanding Salary', type: 'Liability' }, { name: 'Unearned Revenue', type: 'Liability' },
+      { name: 'GST Payable', type: 'Liability' }, { name: 'Debentures', type: 'Liability' },
+      { name: 'Sales', type: 'Income' }, { name: 'Commission Received', type: 'Income' },
+      { name: 'Interest Received', type: 'Income' }, { name: 'Discount Received', type: 'Income' },
+      { name: 'Rent Received', type: 'Income' }, { name: 'Dividend Income', type: 'Income' },
+      { name: 'Bad Debts Recovered', type: 'Income' }, { name: 'Rent Paid', type: 'Expense' },
+      { name: 'Salary Expense', type: 'Expense' }, { name: 'Electricity Bill', type: 'Expense' },
+      { name: 'Purchases', type: 'Expense' }, { name: 'Advertising', type: 'Expense' },
+      { name: 'Depreciation', type: 'Expense' }, { name: 'Carriage Inwards', type: 'Expense' },
+      { name: 'Bad Debts', type: 'Expense' }, { name: 'Stationery Expense', type: 'Expense' },
+      { name: 'Capital', type: 'Capital' }, { name: 'Owner Equity', type: 'Capital' },
+      { name: 'Additional Capital', type: 'Capital' }, { name: 'Drawings (Contra Capital)', type: 'Capital' }
+    ];
+    const CG_CATS = ['Asset', 'Liability', 'Income', 'Expense', 'Capital'];
+    let cgClassifySession = null;
+
+    function cgInitClassify(lvl) {
+      const questions = cgSeededShuffle(CG_CLASSIFY_BANK, lvl * 31).slice(0, 10);
+      cgClassifySession = { level: lvl, questions, index: 0, score: 0, answered: false };
+      cgRenderClassifyUI();
+    }
+
+    function cgRenderClassifyUI() {
+      cgClearTimer();
+      const s = cgClassifySession;
+      const diff = cgGetDifficulty(s.level);
+      const diffColor = diff === 'Beginner' ? '#059669' : diff === 'Intermediate' ? '#ea580c' : '#7c3aed';
+      const container = document.getElementById('cg-game-container');
+      let bodyHTML = '';
+
+      if (s.index >= s.questions.length) {
+        const pct = Math.round((s.score / s.questions.length) * 100);
+        const passed = pct >= 80;
+        if (passed && s.level === cgState.unlocked.classify && cgState.unlocked.classify < CG_TOTAL_LEVELS) {
+          cgState.unlocked.classify++;
+          cgSaveState();
+          cgShowBadgeToast(`Badge unlocked: 🏆<br>Classify Level ${s.level} Champion`);
+        }
+        bodyHTML = `
+          <div class="mt-4 p-5 rounded-2xl text-center ${passed ? 'bg-emerald-50 border border-emerald-200' : 'bg-rose-50 border border-rose-200'}">
+            <h3 class="text-lg font-extrabold text-slate-900">${passed ? `🎉 Level ${s.level} cleared!` : `😅 Almost there!`}</h3>
+            <p class="text-sm text-slate-600 mt-1 mb-4">Score: <b>${s.score}/${s.questions.length} (${pct}%)</b> — ${passed ? 'Next level unlocked!' : 'Score at least 80% to unlock next level.'}</p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <button class="cg-primary-btn" onclick="cgInitClassify(${s.level})">Replay Level</button>
+              ${passed && s.level < CG_TOTAL_LEVELS ? `<button class="cg-primary-btn" onclick="cgSelectLevel('classify', ${s.level + 1})">Next Level →</button>` : ''}
+            </div>
+          </div>`;
+      } else {
+        const q = s.questions[s.index];
+        const useTimer = s.level >= 3;
+        const secs = Math.max(5, 13 - Math.floor(s.level / 4));
+
+        bodyHTML = `
+          <div class="flex flex-wrap justify-between items-center gap-2 text-xs sm:text-sm text-slate-500 mb-3">
+            <div>Level ${s.level} of ${CG_TOTAL_LEVELS} · <b style="color:${diffColor}">${diff}</b> · score 80% to unlock next</div>
+            ${useTimer ? `<span id="cg-timer" class="bg-rose-100 text-rose-700 font-extrabold px-2.5 py-1 rounded-full text-xs">⏱ ${secs}s</span>` : ''}
+          </div>
+          <div class="text-xs sm:text-sm text-slate-500 mb-2"><b>${s.index + 1} / ${s.questions.length}</b> · Score ${s.score}</div>
+          <div class="text-center py-6">
+            <div class="text-2xl sm:text-3xl font-extrabold text-teal-900 mb-6">${q.name}</div>
+            <div class="flex flex-wrap justify-center gap-2.5">
+              ${CG_CATS.map(cat => `<button class="cg-opt-btn" onclick="cgAnswerClassify(this, '${cat}')">${cat}</button>`).join('')}
+            </div>
+          </div>`;
+
+        container.innerHTML = `
+          <h3 class="text-xl font-extrabold text-slate-900">Classify It</h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1 mb-4">Is it an Asset, Liability, Income, Expense or Capital? From Level 3 each card is timed.</p>
+          ${cgRenderLevelGrid('classify')}
+          ${bodyHTML}`;
+
+        if (useTimer) cgStartClassifyTimer(secs);
+        return;
+      }
+
+      container.innerHTML = `
+        <h3 class="text-xl font-extrabold text-slate-900">Classify It</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1 mb-4">Is it an Asset, Liability, Income, Expense or Capital? From Level 3 each card is timed.</p>
+        ${cgRenderLevelGrid('classify')}
+        ${bodyHTML}`;
+    }
+
+    function cgStartClassifyTimer(seconds) {
+      let left = seconds;
+      const el = document.getElementById('cg-timer');
+      cgActiveTimer = setInterval(() => {
+        left--;
+        if (el) el.textContent = `⏱ ${left}s`;
+        if (left <= 0) {
+          cgClearTimer();
+          cgAnswerClassify(null, '__TIMEOUT__');
+        }
+      }, 1000);
+    }
+
+    function cgAnswerClassify(btn, chosen) {
+      const s = cgClassifySession;
+      if (s.answered) return;
+      s.answered = true;
+      cgClearTimer();
+
+      const correctType = s.questions[s.index].type;
+      document.querySelectorAll('.cg-opt-btn').forEach(b => {
+        b.disabled = true;
+        if (b.textContent === correctType) b.classList.add('correct');
+        else if (b === btn) b.classList.add('wrong');
+      });
+
+      if (chosen === correctType) {
+        s.score++;
+        cgState.points += 10;
+        cgState.streak++;
+      } else {
+        cgState.streak = 0;
+      }
+      cgSaveState();
+
+      setTimeout(() => {
+        s.index++;
+        s.answered = false;
+        cgRenderClassifyUI();
+      }, 800);
+    }
+
+    /* ===== GAME 2: TRIAL BALANCE PUZZLE ===== */
+    const CG_FIXED_TB = {
+      1: [
+        { ledger: 'Cash in Hand', amount: 50000, side: 'Dr' },
+        { ledger: 'Furniture', amount: 30000, side: 'Dr' },
+        { ledger: 'Rent Paid', amount: 20000, side: 'Dr' },
+        { ledger: 'Capital', amount: 70000, side: 'Cr' },
+        { ledger: 'Sales', amount: 30000, side: 'Cr' }
+      ],
+      2: [
+        { ledger: 'Purchases', amount: 60000, side: 'Dr' },
+        { ledger: 'Sundry Debtors', amount: 45000, side: 'Dr' },
+        { ledger: 'Salary', amount: 15000, side: 'Dr' },
+        { ledger: 'Bank Balance', amount: 20000, side: 'Dr' },
+        { ledger: 'Capital', amount: 80000, side: 'Cr' },
+        { ledger: 'Creditors', amount: 25000, side: 'Cr' },
+        { ledger: 'Sales', amount: 35000, side: 'Cr' }
+      ],
+      3: [
+        { ledger: 'Rent', amount: 30000, side: 'Dr' },
+        { ledger: 'Purchase returns', amount: 10000, side: 'Cr' },
+        { ledger: 'Furniture', amount: 80000, side: 'Dr' },
+        { ledger: 'Opening stock', amount: 72000, side: 'Dr' },
+        { ledger: 'Creditors', amount: 69000, side: 'Cr' },
+        { ledger: 'Capital', amount: 17000, side: 'Cr' },
+        { ledger: 'Sales', amount: 86000, side: 'Cr' }
+      ]
+    };
+    const CG_DR_LEDGERS = ['Cash in Hand', 'Furniture', 'Machinery', 'Opening Stock', 'Purchases', 'Sales Returns', 'Sundry Debtors', 'Rent Paid', 'Salary', 'Drawings', 'Carriage Inwards', 'Electricity Expense', 'Bills Receivable', 'Prepaid Rent', 'Goodwill'];
+    const CG_CR_LEDGERS = ['Sales', 'Sundry Creditors', 'Bank Loan', 'Bank Overdraft', 'Purchase Returns', 'Commission Received', 'Discount Received', 'Bills Payable', 'Outstanding Salary', 'Interest Received'];
+    let cgTBSession = null;
+
+    function cgGenerateTBLevel(lvl) {
+      if (CG_FIXED_TB[lvl]) return CG_FIXED_TB[lvl];
+      const drCount = Math.min(5, 3 + (lvl % 3));
+      const crCount = Math.min(4, 2 + (lvl % 3));
+      const pickedDr = cgSeededShuffle(CG_DR_LEDGERS, lvl * 13).slice(0, drCount);
+      const pickedCr = cgSeededShuffle(CG_CR_LEDGERS, lvl * 29).slice(0, crCount);
+
+      let drSum = 0;
+      const drItems = pickedDr.map((name, idx) => {
+        const amt = (Math.floor(cgSeededRandom(lvl * 41 + idx) * 85) + 10) * 1000;
+        drSum += amt;
+        return { ledger: name, amount: amt, side: 'Dr' };
+      });
+      let crSum = 0;
+      const crItems = pickedCr.map((name, idx) => {
+        const amt = (Math.floor(cgSeededRandom(lvl * 53 + idx) * 45) + 8) * 1000;
+        crSum += amt;
+        return { ledger: name, amount: amt, side: 'Cr' };
+      });
+      if (drSum <= crSum + 15000) {
+        const boost = (crSum - drSum) + 35000;
+        drItems[0].amount += boost;
+        drSum += boost;
+      }
+      crItems.push({ ledger: 'Capital', amount: drSum - crSum, side: 'Cr' });
+      return cgSeededShuffle([...drItems, ...crItems], lvl * 71);
+    }
+
+    function cgInitTB(lvl) {
+      cgTBSession = { level: lvl, rows: cgGenerateTBLevel(lvl), choices: {}, checked: false };
+      cgRenderTBUI();
+    }
+
+    function cgPickTBSide(idx, side) {
+      if (cgTBSession.checked) return;
+      cgTBSession.choices[idx] = side;
+      cgRenderTBUI();
+    }
+
+    function cgCheckTB() {
+      const s = cgTBSession;
+      s.checked = true;
+      let rightCount = 0;
+      s.rows.forEach((r, i) => { if (s.choices[i] === r.side) rightCount++; });
+      const pct = Math.round((rightCount / s.rows.length) * 100);
+      if (pct >= 80) {
+        cgState.points += rightCount * 10;
+        cgState.streak++;
+        if (s.level === cgState.unlocked.trial && cgState.unlocked.trial < CG_TOTAL_LEVELS) {
+          cgState.unlocked.trial++;
+          cgShowBadgeToast(`Badge unlocked: 🏆<br>Trial Balance Level ${s.level} Champion`);
+        }
+      } else {
+        cgState.streak = 0;
+      }
+      cgSaveState();
+      cgRenderTBUI(rightCount);
+    }
+
+    function cgRenderTBUI(rightCount = null) {
+      const s = cgTBSession;
+      const diff = cgGetDifficulty(s.level);
+      const diffColor = diff === 'Beginner' ? '#059669' : diff === 'Intermediate' ? '#ea580c' : '#7c3aed';
+      let drTotal = 0, crTotal = 0;
+
+      const rowsHTML = s.rows.map((r, i) => {
+        const picked = s.choices[i];
+        if (picked === 'Dr') drTotal += r.amount;
+        if (picked === 'Cr') crTotal += r.amount;
+        const cls = (side) => {
+          if (!s.checked) return picked === side ? 'selected' : '';
+          if (picked === side) return picked === r.side ? 'right' : 'wrong';
+          return '';
+        };
+        return `
+          <tr>
+            <td class="font-medium text-slate-800">${r.ledger}</td>
+            <td class="font-bold text-slate-900 whitespace-nowrap">${cgFormatINR(r.amount)}</td>
+            <td>
+              <div class="flex gap-2">
+                <button class="cg-circle-btn ${cls('Dr')}" onclick="cgPickTBSide(${i}, 'Dr')">Dr</button>
+                <button class="cg-circle-btn ${cls('Cr')}" onclick="cgPickTBSide(${i}, 'Cr')">Cr</button>
+              </div>
+            </td>
+          </tr>`;
+      }).join('');
+
+      const allPicked = Object.keys(s.choices).length === s.rows.length;
+      const tallied = drTotal > 0 && drTotal === crTotal;
+      let resultHTML = '';
+
+      if (s.checked) {
+        const pct = Math.round((rightCount / s.rows.length) * 100);
+        const passed = pct >= 80;
+        resultHTML = `
+          <div class="mt-4 p-5 rounded-2xl text-center ${passed ? 'bg-emerald-50 border border-emerald-200' : 'bg-rose-50 border border-rose-200'}">
+            <h3 class="text-lg font-extrabold text-slate-900">${passed ? `🎉 Level ${s.level} cleared!` : `⚠️ Keep practicing!`}</h3>
+            <p class="text-sm text-slate-600 mt-1 mb-4">Score <b>${rightCount}/${s.rows.length} (${pct}%)</b> ${passed && s.level < CG_TOTAL_LEVELS ? `· Level ${s.level + 1} unlocked!` : ''}</p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <button class="cg-primary-btn" onclick="cgInitTB(${s.level})">Try Again</button>
+              ${passed && s.level < CG_TOTAL_LEVELS ? `<button class="cg-primary-btn" onclick="cgSelectLevel('trial', ${s.level + 1})">Next Level →</button>` : ''}
+            </div>
+          </div>`;
+      }
+
+      document.getElementById('cg-game-container').innerHTML = `
+        <h3 class="text-xl font-extrabold text-slate-900">Trial Balance Tally Puzzle</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1 mb-4">Put each ledger balance on the correct side. When every ledger is right, Dr and Cr totals will tally!</p>
+        ${cgRenderLevelGrid('trial')}
+        <div class="text-xs sm:text-sm text-slate-500 mb-3">
+          Level ${s.level} of ${CG_TOTAL_LEVELS} · <b style="color:${diffColor}">${diff}</b> · score 80% to unlock next level
+        </div>
+        <div class="rounded-2xl border border-slate-200 overflow-hidden mb-4">
+          <table class="cg-tb-table">
+            <thead><tr><th>Ledger</th><th>Balance</th><th>Side</th></tr></thead>
+            <tbody>
+              ${rowsHTML}
+              <tr style="background:#f0fdfa; font-weight:800; color:#0f766e;">
+                <td>Total</td>
+                <td colspan="2">Dr ${cgFormatINR(drTotal)} · Cr ${cgFormatINR(crTotal)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <button class="cg-primary-btn" onclick="cgCheckTB()" ${!allPicked || s.checked ? 'disabled' : ''}>Check trial balance</button>
+          ${s.checked ? `<span class="font-extrabold text-sm ${tallied ? 'text-emerald-700' : 'text-rose-600'}">${tallied ? '⚖️ Tallied! Dr = Cr' : '❌ Not Tallied (Dr ≠ Cr)'}</span>` : ''}
+        </div>
+        ${resultHTML}`;
+    }
+
+    /* ===== GAME 3: JOURNAL BUILDER ===== */
+    const CG_JOURNAL_BANK = [
+      { txn: 'Started business with Cash ₹2,00,000', dr: 'Cash A/c', cr: 'Capital A/c', opts: ['Cash A/c', 'Capital A/c', 'Sales A/c', 'Bank A/c'] },
+      { txn: 'Paid Office Rent ₹15,000 in Cash', dr: 'Rent A/c', cr: 'Cash A/c', opts: ['Rent A/c', 'Cash A/c', 'Capital A/c', 'Creditors A/c'] },
+      { txn: 'Purchased Furniture ₹40,000 via Bank', dr: 'Furniture A/c', cr: 'Bank A/c', opts: ['Furniture A/c', 'Bank A/c', 'Purchases A/c', 'Cash A/c'] },
+      { txn: 'Sold goods to Rahul on credit ₹25,000', dr: 'Rahul A/c', cr: 'Sales A/c', opts: ['Rahul A/c', 'Sales A/c', 'Cash A/c', 'Purchases A/c'] },
+      { txn: 'Deposited Cash ₹30,000 into Bank', dr: 'Bank A/c', cr: 'Cash A/c', opts: ['Bank A/c', 'Cash A/c', 'Capital A/c', 'Drawings A/c'] },
+      { txn: 'Paid Salary ₹18,000 via UPI/Bank', dr: 'Salary A/c', cr: 'Bank A/c', opts: ['Salary A/c', 'Bank A/c', 'Cash A/c', 'Expenses Payable A/c'] },
+      { txn: 'Purchased goods for Cash ₹22,000', dr: 'Purchases A/c', cr: 'Cash A/c', opts: ['Purchases A/c', 'Cash A/c', 'Sales A/c', 'Stock A/c'] },
+      { txn: 'Received Commission ₹5,000 in Bank', dr: 'Bank A/c', cr: 'Commission Received A/c', opts: ['Bank A/c', 'Commission Received A/c', 'Cash A/c', 'Sales A/c'] },
+      { txn: 'Owner withdrew Cash ₹10,000 for personal use', dr: 'Drawings A/c', cr: 'Cash A/c', opts: ['Drawings A/c', 'Cash A/c', 'Capital A/c', 'Salary A/c'] },
+      { txn: 'Paid ₹12,000 to Supplier Amit via Bank', dr: 'Amit A/c', cr: 'Bank A/c', opts: ['Amit A/c', 'Bank A/c', 'Purchases A/c', 'Cash A/c'] }
+    ];
+    let cgJournalSession = null;
+
+    function cgInitJournal(lvl) {
+      cgJournalSession = { level: lvl, qs: cgSeededShuffle(CG_JOURNAL_BANK, lvl * 19).slice(0, 5), index: 0, score: 0, feedback: null };
+      cgRenderJournalUI();
+    }
+
+    function cgSubmitJournal() {
+      const s = cgJournalSession;
+      const q = s.qs[s.index];
+      const drVal = document.getElementById('cg-j-dr').value;
+      const crVal = document.getElementById('cg-j-cr').value;
+      if (drVal === q.dr && crVal === q.cr) {
+        s.score++;
+        cgState.points += 15;
+        cgState.streak++;
+        s.feedback = { ok: true, text: `✅ Correct! ${q.dr} Dr. To ${q.cr}` };
+      } else {
+        cgState.streak = 0;
+        s.feedback = { ok: false, text: `❌ Correct entry: ${q.dr} Dr. To ${q.cr}` };
+      }
+      cgSaveState();
+      cgRenderJournalUI();
+    }
+
+    function cgNextJournalQ() {
+      cgJournalSession.index++;
+      cgJournalSession.feedback = null;
+      cgRenderJournalUI();
+    }
+
+    function cgRenderJournalUI() {
+      const s = cgJournalSession;
+      const diff = cgGetDifficulty(s.level);
+      const diffColor = diff === 'Beginner' ? '#059669' : diff === 'Intermediate' ? '#ea580c' : '#7c3aed';
+      let bodyHTML = '';
+
+      if (s.index >= s.qs.length) {
+        const pct = Math.round((s.score / s.qs.length) * 100);
+        const passed = pct >= 80;
+        if (passed && s.level === cgState.unlocked.journal && cgState.unlocked.journal < CG_TOTAL_LEVELS) {
+          cgState.unlocked.journal++;
+          cgSaveState();
+          cgShowBadgeToast(`Badge unlocked: 🏆<br>Journal Level ${s.level} Champion`);
+        }
+        bodyHTML = `
+          <div class="mt-4 p-5 rounded-2xl text-center ${passed ? 'bg-emerald-50 border border-emerald-200' : 'bg-rose-50 border border-rose-200'}">
+            <h3 class="text-lg font-extrabold text-slate-900">${passed ? `🎉 Level ${s.level} cleared!` : `😅 Try Again!`}</h3>
+            <p class="text-sm text-slate-600 mt-1 mb-4">Score: <b>${s.score}/${s.qs.length} (${pct}%)</b></p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <button class="cg-primary-btn" onclick="cgInitJournal(${s.level})">Replay</button>
+              ${passed && s.level < CG_TOTAL_LEVELS ? `<button class="cg-primary-btn" onclick="cgSelectLevel('journal', ${s.level + 1})">Next Level →</button>` : ''}
+            </div>
+          </div>`;
+      } else {
+        const q = s.qs[s.index];
+        const optsHTML = q.opts.map(o => `<option value="${o}">${o}</option>`).join('');
+        bodyHTML = `
+          <div class="text-xs sm:text-sm text-slate-500 mb-3">
+            Level ${s.level} of ${CG_TOTAL_LEVELS} · <b style="color:${diffColor}">${diff}</b> · Question ${s.index + 1}/${s.qs.length}
+          </div>
+          <div class="bg-teal-50/70 border-l-4 border-teal-700 p-4 rounded-xl font-bold text-slate-900 text-sm sm:text-base mb-4">
+            ${q.txn}
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-500 mb-1">Debit Account (Dr.)</label>
+              <select id="cg-j-dr" class="w-full p-2.5 rounded-xl border border-slate-300 text-sm font-semibold bg-white" ${s.feedback ? 'disabled' : ''}>${optsHTML}</select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-500 mb-1">Credit Account (Cr.)</label>
+              <select id="cg-j-cr" class="w-full p-2.5 rounded-xl border border-slate-300 text-sm font-semibold bg-white" ${s.feedback ? 'disabled' : ''}>${optsHTML}</select>
+            </div>
+          </div>
+          ${!s.feedback
+            ? `<button class="cg-primary-btn" onclick="cgSubmitJournal()">Check Entry</button>`
+            : `<div class="p-4 rounded-xl ${s.feedback.ok ? 'bg-emerald-50 border border-emerald-200' : 'bg-rose-50 border border-rose-200'}">
+                 <p class="font-bold text-sm text-slate-900 mb-3">${s.feedback.text}</p>
+                 <button class="cg-primary-btn" onclick="cgNextJournalQ()">Next Transaction →</button>
+               </div>`
+          }`;
+      }
+
+      document.getElementById('cg-game-container').innerHTML = `
+        <h3 class="text-xl font-extrabold text-slate-900">Journal Builder</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1 mb-4">Pick the right Debit (Dr) and Credit (Cr) ledger for each business transaction.</p>
+        ${cgRenderLevelGrid('journal')}
+        ${bodyHTML}`;
+    }
+
+    function cgRenderGame() {
+      const g = cgState.activeGame;
+      const lvl = cgState.currentLevel[g];
+      if (g === 'classify') cgInitClassify(lvl);
+      else if (g === 'trial') cgInitTB(lvl);
+      else cgInitJournal(lvl);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      cgSaveState();
+      cgSwitchGame(cgState.activeGame);
+    });
   </script>
 </body>
 </html>
